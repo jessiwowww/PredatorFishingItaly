@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-pine text-cream font-barlow antialiased;
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-barlow font-bold text-[12px] uppercase tracking-[0.25em] text-gold;
+  }
+  .btn-gold {
+    @apply inline-block bg-gold text-pine font-barlow font-semibold uppercase tracking-[0.05em] rounded-[2px] cursor-pointer text-center transition-opacity hover:opacity-90 disabled:cursor-default;
+  }
+  .chip {
+    @apply font-barlow font-semibold text-sm uppercase tracking-[0.03em] px-[18px] py-[10px] rounded-full text-gold border;
+    background: rgba(201, 162, 39, 0.12);
+    border-color: rgba(201, 162, 39, 0.4);
+  }
+  .divider {
+    border-color: rgba(243, 234, 217, 0.1);
+  }
+  .input-dark {
+    @apply w-full bg-transparent border rounded-md px-3 py-2.5 text-cream font-barlow text-[15px] outline-none placeholder:text-cream/40 focus:border-gold/60;
+    border-color: rgba(243, 234, 217, 0.18);
+  }
+}

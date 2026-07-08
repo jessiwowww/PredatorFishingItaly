@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  body{margin:0;background:#eee8dc;font-family:'Barlow Condensed',sans-serif}
+  .dv-turn{padding:40px 44px 60px;scroll-margin-top:16px}
+  .dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 24px}
+  .dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#142019;color:#fff;border-radius:4px;text-decoration:none}
+  .dv-tname{font:600 14px/1.2 'Barlow Condensed',sans-serif;letter-spacing:.02em;color:#142019}
+  .dv-opts{display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start}
+  .dv-opt{flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px}
+  .dv-oid{font:600 11px ui-monospace,Menlo,monospace;padding:3px 8px;background:rgba(20,32,25,.1);color:#142019;border-radius:5px;text-decoration:none}
+  .dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 12px/1.3 'Barlow Condensed',sans-serif;color:rgba(20,32,25,.6)}
+  .dv-card{width:1000px;max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,.1);overflow:hidden}
+  .dv-opt:target .dv-oid{background:#c9a227;color:#142019}
+  .dv-next{margin:26px 0 0;font:15px/1.5 'Barlow Condensed',sans-serif;color:rgba(20,32,25,.6)}
+  image-slot{display:block}
+  .chip{flex:none;font:600 13px/1 'Barlow Condensed',sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:9px 16px;border-radius:999px;white-space:nowrap}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t1">
+  <div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Home page — 3 directions</span></div>
+  <div class="dv-opts">
+
+    <!-- ===================== OPTION 1A — CINEMATIC / DAWN ===================== -->
+    <div class="dv-opt" id="1a">
+      <div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Cinematic — full-bleed dawn, minimal type</div>
+      <div class="dv-card">
+        <div style="background:#0f1a14;color:#f3ead9">
+
+          <!-- NAV -->
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:22px 40px;position:relative;z-index:2">
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:19px;letter-spacing:.02em">ITALIAN BASS FISHING</div>
+            <div style="display:flex;align-items:center;gap:28px;font:600 14px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.06em">
+              <div>Tours</div><div>The Guide</div><div>Journal</div><div>Contact</div>
+              <div style="display:flex;gap:6px;font-size:12px;color:rgba(243,234,217,.5)"><span style="color:#f3ead9">EN</span><span>/</span><span>IT</span></div>
+              <div style="padding:9px 18px;border:1px solid #c9a227;color:#c9a227;border-radius:2px;font-size:13px">Book Now</div>
+            </div>
+          </div>
+
+          <!-- HERO -->
+          <div style="position:relative;height:600px">
+            <image-slot id="hero-1a" style="position:absolute;inset:0;width:100%;height:100%" shape="rect" placeholder="Drop hero photo — angler at dawn, Lake Garda" fit="cover" src="uploads/464458989_18262458142301627_6602861292225807288_n.jpg"></image-slot>
+            <div style="position:absolute;inset:0;background:linear-gradient(0deg,#0f1a14 6%,rgba(15,26,20,.15) 55%,rgba(15,26,20,.55))"></div>
+            <div style="position:absolute;left:40px;right:40px;bottom:56px">
+              <div style="font:700 13px/1 'Barlow Condensed',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#c9a227;margin-bottom:18px">#PredatorFishing &nbsp;·&nbsp; Veneto, Italy</div>
+              <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:76px;line-height:.95;letter-spacing:-.01em;max-width:780px">WHERE THE PREDATOR WAITS</div>
+              <div style="font:400 22px/1.4 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.85);max-width:560px;margin-top:20px">Not only fishing — a real interactive experience discovering local nature and wildlife.</div>
+            </div>
+          </div>
+
+          <!-- INTRO / GUIDE -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+            <image-slot id="guide-1a" style="width:100%;height:460px" shape="rect" placeholder="Drop portrait — Roberto Bertoncello on the boat" src="uploads/625037294_18085468679332504_7705878416442635320_n.jpg"></image-slot>
+            <div style="padding:64px 56px;display:flex;flex-direction:column;justify-content:center;gap:18px">
+              <div style="font:700 12px/1 'Barlow Condensed',sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#c9a227">The Guide</div>
+              <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:34px;line-height:1.05">Roberto Bertoncello</div>
+              <div style="font:400 19px/1.5 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.8);max-width:420px">40 years reading Italian water. Certified AIGUPP guide, fishery warden, national tournament finisher — now sharing the hunt with anglers from around the world.</div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+                <div class="chip" style="background:rgba(201,162,39,.12);color:#c9a227;border:1px solid rgba(201,162,39,.4)">AIGUPP ITA 156/22</div>
+                <div class="chip" style="background:rgba(201,162,39,.12);color:#c9a227;border:1px solid rgba(201,162,39,.4)">Speaks English</div>
+                <div class="chip" style="background:rgba(201,162,39,.12);color:#c9a227;border:1px solid rgba(201,162,39,.4)">Nat'l Team Qualifier</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SPECIES / SPOTS STRIP -->
+          <div style="padding:40px;border-top:1px solid rgba(243,234,217,.12)">
+            <div style="font:700 12px/1 'Barlow Condensed',sans-serif;letter-spacing:.25em;text-transform:uppercase;color:rgba(243,234,217,.5);margin-bottom:16px">Target Species</div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <div class="chip" style="background:rgba(243,234,217,.06);color:#f3ead9">Bass</div>
+              <div class="chip" style="background:rgba(243,234,217,.06);color:#f3ead9">Pike</div>
+              <div class="chip" style="background:rgba(243,234,217,.06);color:#f3ead9">Zander</div>
+              <div class="chip" style="background:rgba(243,234,217,.06);color:#f3ead9">Perch</div>
+              <div class="chip" style="background:rgba(243,234,217,.06);color:#f3ead9">Sea Bass</div>
+              <div class="chip" style="background:rgba(243,234,217,.06);color:#f3ead9">Gilthead Bream</div>
+            </div>
+          </div>
+
+          <!-- TOURS TEASER -->
+          <div style="padding:56px 40px;background:#142019">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px">
+              <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:28px">Discover the Tours</div>
+              <div style="font:600 14px/1 'Barlow Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#c9a227">View all →</div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+              <div>
+                <image-slot id="tour1-1a" style="width:100%;height:180px" shape="rounded" radius="3" placeholder="Full-day photo" src="uploads/551059173_18303133603301627_6685483260568327361_n.jpg"></image-slot>
+                <div style="padding-top:14px;font:700 20px/1.1 'Barlow Condensed',sans-serif">Full-Day Predator Hunt</div>
+                <div style="font:400 15px/1.4 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.65);margin-top:6px">8h · lakes & rivers · gear included</div>
+              </div>
+              <div>
+                <image-slot id="tour2-1a" style="width:100%;height:180px" shape="rounded" radius="3" placeholder="Half-day photo" src="uploads/622601965_18087845009033997_4113553314975789302_n.jpg"></image-slot>
+                <div style="padding-top:14px;font:700 20px/1.1 'Barlow Condensed',sans-serif">Half-Day Spin & Cast</div>
+                <div style="font:400 15px/1.4 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.65);margin-top:6px">4h · ideal for first-timers</div>
+              </div>
+              <div>
+                <image-slot id="tour3-1a" style="width:100%;height:180px" shape="rounded" radius="3" placeholder="Lagoon photo" src="uploads/719222990_18341522545301627_5857281317948476718_n.jpg"></image-slot>
+                <div style="padding-top:14px;font:700 20px/1.1 'Barlow Condensed',sans-serif">Lagoon Discovery, Burano</div>
+                <div style="font:400 15px/1.4 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.65);margin-top:6px">Full day · sea bass & bream</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOTER -->
+          <div style="padding:26px 40px;border-top:1px solid rgba(243,234,217,.12);display:flex;justify-content:space-between;align-items:center;font:400 13px/1 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.45)">
+            <div>© Italian Bass Fishing — Veneto, Italy</div>
+            <div>#PredatorFishing</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== OPTION 1B — EDITORIAL MAGAZINE ===================== -->
+    <div class="dv-opt" id="1b">
+      <div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Editorial — magazine grid, content-dense</div>
+      <div class="dv-card">
+        <div style="background:#f3ead9;color:#142019">
+
+          <!-- NAV -->
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 40px;border-bottom:2px solid #142019">
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:19px;letter-spacing:.02em">ITALIAN BASS FISHING <span style="color:#c9a227">°</span></div>
+            <div style="display:flex;align-items:center;gap:26px;font:600 14px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em">
+              <div>Tours</div><div>The Guide</div><div>Journal</div><div>Contact</div>
+              <div style="display:flex;gap:6px;font-size:12px;color:rgba(20,32,25,.4)"><span style="color:#142019">EN</span><span>/</span><span>IT</span></div>
+              <div style="padding:9px 18px;background:#142019;color:#f3ead9;border-radius:2px;font-size:13px">Book Now</div>
+            </div>
+          </div>
+
+          <!-- HERO GRID -->
+          <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:0;border-bottom:2px solid #142019">
+            <div style="padding:52px 44px;display:flex;flex-direction:column;justify-content:center;gap:20px;border-right:2px solid #142019">
+              <div style="font:700 13px/1 'Barlow Condensed',sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#c9a227">Issue No.01 — Veneto, Italy</div>
+              <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:58px;line-height:.98">HUNT THE<br>WATER'S GHOST</div>
+              <div style="font:400 19px/1.45 'Barlow Condensed',sans-serif;color:rgba(20,32,25,.75);max-width:420px">Guided predator fishing across Italy's lakes, rivers and the Venice Lagoon. Not only fishing — a real interactive experience discovering local nature and wildlife.</div>
+              <div style="display:flex;gap:14px;margin-top:8px">
+                <div style="padding:12px 22px;background:#142019;color:#f3ead9;font:600 14px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em">Discover the Tours</div>
+                <div style="padding:12px 22px;border:1px solid #142019;font:600 14px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em">#PredatorFishing</div>
+              </div>
+            </div>
+            <image-slot id="hero-1b" style="width:100%;height:520px" shape="rect" placeholder="Drop hero photo — bass boat, spinning cast" src="uploads/551059173_18303133603301627_6685483260568327361_n.jpg"></image-slot>
+          </div>
+
+          <!-- STAT / GUIDE STRIP -->
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;border-bottom:2px solid #142019">
+            <div style="padding:26px 30px;border-right:1px solid rgba(20,32,25,.15)">
+              <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:30px">40</div>
+              <div style="font:500 14px/1.2 'Barlow Condensed',sans-serif;color:rgba(20,32,25,.6);text-transform:uppercase">Years chasing predators</div>
+            </div>
+            <div style="padding:26px 30px;border-right:1px solid rgba(20,32,25,.15)">
+              <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:30px">#1</div>
+              <div style="font:500 14px/1.2 'Barlow Condensed',sans-serif;color:rgba(20,32,25,.6);text-transform:uppercase">Qualifier, Lago d'Endine 2021</div>
+            </div>
+            <div style="padding:26px 30px;border-right:1px solid rgba(20,32,25,.15)">
+              <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:30px">9</div>
+              <div style="font:500 14px/1.2 'Barlow Condensed',sans-serif;color:rgba(20,32,25,.6);text-transform:uppercase">Waters fished, Veneto & beyond</div>
+            </div>
+            <div style="padding:26px 30px">
+              <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:30px">AIGUPP</div>
+              <div style="font:500 14px/1.2 'Barlow Condensed',sans-serif;color:rgba(20,32,25,.6);text-transform:uppercase">Certified guide ITA 156/22</div>
+            </div>
+          </div>
+
+          <!-- GUIDE FEATURE -->
+          <div style="display:grid;grid-template-columns:220px 1fr;gap:28px;padding:44px;border-bottom:2px solid #142019">
+            <image-slot id="guide-1b" style="width:220px;height:260px" shape="rect" placeholder="Portrait — Roberto" src="uploads/625037294_18085468679332504_7705878416442635320_n.jpg"></image-slot>
+            <div>
+              <div style="font:700 12px/1 'Barlow Condensed',sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#c9a227;margin-bottom:10px">Meet the Guide</div>
+              <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:28px;margin-bottom:10px">Roberto Bertoncello</div>
+              <div style="font:400 17px/1.5 'Barlow Condensed',sans-serif;color:rgba(20,32,25,.75);max-width:520px">Fishery warden, tournament angler, and English-speaking guide with four decades on Italian water — including regular days with visiting anglers in the Venice Lagoon.</div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+                <div class="chip" style="background:transparent;border:1px solid #142019">Catch & Release</div>
+                <div class="chip" style="background:transparent;border:1px solid #142019">Gear Rental Available</div>
+                <div class="chip" style="background:transparent;border:1px solid #142019">English Spoken</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SPOTS INDEX -->
+          <div style="padding:36px 44px;border-bottom:2px solid #142019">
+            <div style="font:700 12px/1 'Barlow Condensed',sans-serif;letter-spacing:.25em;text-transform:uppercase;color:rgba(20,32,25,.5);margin-bottom:14px">Index of Waters</div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px 30px;font:500 17px/1.7 'Barlow Condensed',sans-serif">
+              <div>01 — Lake Garda</div><div>04 — Lake Bolsena</div><div>07 — Bacchiglione</div>
+              <div>02 — Lake Iseo</div><div>05 — Brenta, Strà</div><div>08 — Sile</div>
+              <div>03 — Lake Corlo / Revine</div><div>06 — Venice Lagoon</div><div>09 — Burano</div>
+            </div>
+          </div>
+
+          <!-- TOURS -->
+          <div style="padding:44px">
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:26px;margin-bottom:24px">Book a Day on the Water</div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid #142019">
+              <div style="padding:22px;border-right:1px solid #142019">
+                <div style="font:700 20px/1.1 'Barlow Condensed',sans-serif">Full-Day Hunt</div>
+                <div style="font:400 15px/1.4 'Barlow Condensed',sans-serif;color:rgba(20,32,25,.6);margin-top:8px">8 hours, lakes & rivers, all gear included</div>
+              </div>
+              <div style="padding:22px;border-right:1px solid #142019">
+                <div style="font:700 20px/1.1 'Barlow Condensed',sans-serif">Half-Day Spin</div>
+                <div style="font:400 15px/1.4 'Barlow Condensed',sans-serif;color:rgba(20,32,25,.6);margin-top:8px">4 hours, ideal first outing</div>
+              </div>
+              <div style="padding:22px">
+                <div style="font:700 20px/1.1 'Barlow Condensed',sans-serif">Lagoon Day, Burano</div>
+                <div style="font:400 15px/1.4 'Barlow Condensed',sans-serif;color:rgba(20,32,25,.6);margin-top:8px">Full day, sea bass & bream</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOTER -->
+          <div style="padding:22px 44px;border-top:2px solid #142019;display:flex;justify-content:space-between;font:400 13px/1 'Barlow Condensed',sans-serif;color:rgba(20,32,25,.5)">
+            <div>© Italian Bass Fishing — Veneto, Italy</div><div>#PredatorFishing</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== OPTION 1C — LAGOON LIGHT / TRAVEL EDITORIAL ===================== -->
+    <div class="dv-opt" id="1c">
+      <div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Lagoon light — bright, travel-editorial, imagery-led</div>
+      <div class="dv-card">
+        <div style="background:#faf6ee;color:#1c2b24">
+
+          <!-- NAV -->
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:24px 40px">
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:19px;letter-spacing:.02em;color:#1c2b24">Italian Bass Fishing</div>
+            <div style="display:flex;align-items:center;gap:28px;font:500 14px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;color:#1c2b24">
+              <div>Tours</div><div>The Guide</div><div>Journal</div><div>Contact</div>
+              <div style="display:flex;gap:6px;font-size:12px;color:rgba(28,43,36,.4)"><span style="color:#1c2b24">EN</span><span>/</span><span>IT</span></div>
+              <div style="padding:10px 20px;background:#c9a227;color:#1c2b24;border-radius:999px;font-size:13px;font-weight:600">Book Now</div>
+            </div>
+          </div>
+
+          <!-- HERO -->
+          <div style="padding:10px 40px 0">
+            <div style="font:600 13px/1 'Barlow Condensed',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#8a7638;margin-bottom:14px">Sunrise · Spinning · Silence</div>
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:56px;line-height:1;max-width:640px;color:#1c2b24">The lagoon wakes before you do.</div>
+            <div style="font:400 19px/1.5 'Barlow Condensed',sans-serif;color:rgba(28,43,36,.65);max-width:480px;margin-top:16px">Not only fishing — a real interactive experience discovering local nature and wildlife.</div>
+          </div>
+          <div style="display:grid;grid-template-columns:2fr 1fr;gap:14px;padding:28px 40px 0">
+            <image-slot id="hero-1c" style="width:100%;height:420px" shape="rounded" radius="6" placeholder="Drop hero — Venice Lagoon at dawn" src="uploads/719222990_18341522545301627_5857281317948476718_n.jpg"></image-slot>
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <image-slot id="hero-1c-b" style="width:100%;height:200px" shape="rounded" radius="6" placeholder="Catch photo" src="uploads/654790770_18116548564646226_5420140911386369512_n.jpg"></image-slot>
+              <image-slot id="hero-1c-c" style="width:100%;height:206px" shape="rounded" radius="6" placeholder="Guide + client" src="uploads/625037294_18085468679332504_7705878416442635320_n.jpg"></image-slot>
+            </div>
+          </div>
+
+          <!-- SPECIES STRIP -->
+          <div style="padding:36px 40px;display:flex;gap:10px;flex-wrap:wrap">
+            <div class="chip" style="background:#1c2b24;color:#faf6ee">Bass</div>
+            <div class="chip" style="background:rgba(28,43,36,.08);color:#1c2b24">Pike</div>
+            <div class="chip" style="background:rgba(28,43,36,.08);color:#1c2b24">Zander</div>
+            <div class="chip" style="background:rgba(28,43,36,.08);color:#1c2b24">Perch</div>
+            <div class="chip" style="background:rgba(28,43,36,.08);color:#1c2b24">Sea Bass</div>
+            <div class="chip" style="background:rgba(28,43,36,.08);color:#1c2b24">Gilthead Bream</div>
+          </div>
+
+          <!-- GUIDE -->
+          <div style="display:grid;grid-template-columns:200px 1fr;gap:26px;padding:10px 40px 40px;align-items:center">
+            <image-slot id="guide-1c" style="width:200px;height:200px" shape="circle" placeholder="Portrait" src="uploads/625037294_18085468679332504_7705878416442635320_n.jpg"></image-slot>
+            <div>
+              <div style="font:600 12px/1 'Barlow Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#8a7638;margin-bottom:8px">Guided by Roberto Bertoncello</div>
+              <div style="font:400 18px/1.5 'Barlow Condensed',sans-serif;color:rgba(28,43,36,.75);max-width:500px">40 years on Italian water, certified AIGUPP guide, fishery warden and national tournament qualifier — sharing the lagoon and its wildlife with visiting anglers.</div>
+            </div>
+          </div>
+
+          <!-- SPOTS SCROLL STRIP -->
+          <div style="padding:0 40px 40px">
+            <div style="font:600 13px/1 'Barlow Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#8a7638;margin-bottom:14px">Where We Fish</div>
+            <div style="display:flex;gap:14px;overflow:hidden">
+              <image-slot id="spot1-1c" style="width:180px;height:130px;flex:none" shape="rounded" radius="6" placeholder="Lake Garda" src="uploads/551059173_18303133603301627_6685483260568327361_n.jpg"></image-slot>
+              <image-slot id="spot2-1c" style="width:180px;height:130px;flex:none" shape="rounded" radius="6" placeholder="Lake Iseo" src="uploads/464458989_18262458142301627_6602861292225807288_n.jpg"></image-slot>
+              <image-slot id="spot3-1c" style="width:180px;height:130px;flex:none" shape="rounded" radius="6" placeholder="Venice Lagoon" src="uploads/719222990_18341522545301627_5857281317948476718_n.jpg"></image-slot>
+              <image-slot id="spot4-1c" style="width:180px;height:130px;flex:none" shape="rounded" radius="6" placeholder="Sile River" src="uploads/549240858_18302955532301627_1679975992775126115_n.jpg"></image-slot>
+              <image-slot id="spot5-1c" style="width:180px;height:130px;flex:none" shape="rounded" radius="6" placeholder="Burano" src="uploads/650077968_18084383602992498_5387049472078248950_n.jpg"></image-slot>
+            </div>
+          </div>
+
+          <!-- TOURS -->
+          <div style="padding:40px;background:#1c2b24">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px">
+              <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:26px;color:#faf6ee">Discover the Tours</div>
+              <div style="font:600 14px/1 'Barlow Condensed',sans-serif;letter-spacing:.05em;text-transform:uppercase;color:#c9a227">View all →</div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+              <div style="background:#faf6ee;border-radius:6px;overflow:hidden">
+                <image-slot id="tour1-1c" style="width:100%;height:140px" shape="rect" placeholder="Full day" src="uploads/551059173_18303133603301627_6685483260568327361_n.jpg"></image-slot>
+                <div style="padding:16px"><div style="font:700 18px/1.1 'Barlow Condensed',sans-serif;color:#1c2b24">Full-Day Predator Hunt</div><div style="font:400 14px/1.4 'Barlow Condensed',sans-serif;color:rgba(28,43,36,.6);margin-top:6px">8h · gear included</div></div>
+              </div>
+              <div style="background:#faf6ee;border-radius:6px;overflow:hidden">
+                <image-slot id="tour2-1c" style="width:100%;height:140px" shape="rect" placeholder="Half day" src="uploads/622601965_18087845009033997_4113553314975789302_n.jpg"></image-slot>
+                <div style="padding:16px"><div style="font:700 18px/1.1 'Barlow Condensed',sans-serif;color:#1c2b24">Half-Day Spin & Cast</div><div style="font:400 14px/1.4 'Barlow Condensed',sans-serif;color:rgba(28,43,36,.6);margin-top:6px">4h · first-timers welcome</div></div>
+              </div>
+              <div style="background:#faf6ee;border-radius:6px;overflow:hidden">
+                <image-slot id="tour3-1c" style="width:100%;height:140px" shape="rect" placeholder="Lagoon" src="uploads/719222990_18341522545301627_5857281317948476718_n.jpg"></image-slot>
+                <div style="padding:16px"><div style="font:700 18px/1.1 'Barlow Condensed',sans-serif;color:#1c2b24">Lagoon Discovery, Burano</div><div style="font:400 14px/1.4 'Barlow Condensed',sans-serif;color:rgba(28,43,36,.6);margin-top:6px">Full day · sea bass & bream</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOTER -->
+          <div style="padding:22px 40px;display:flex;justify-content:space-between;font:400 13px/1 'Barlow Condensed',sans-serif;color:rgba(28,43,36,.5)">
+            <div>© Italian Bass Fishing — Veneto, Italy</div><div>#PredatorFishing</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p class="dv-next">Try next: "go with <a class="dv-oid" href="#1b">1b</a> but the hero copy from <a class="dv-oid" href="#1a">1a</a>" · "make <a class="dv-oid" href="#1c">1c</a> the full site" · "more directions"</p>
+</section>
+
+</x-dc>
+</body>
+</html>

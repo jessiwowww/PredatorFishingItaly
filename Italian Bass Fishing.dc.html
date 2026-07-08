@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>body{margin:0;background:#13221b}</style>
+</helmet>
+
+<div style="font-family:'Barlow Condensed',sans-serif;background:#13221b;color:#f3ead9">
+
+  <!-- ============ NAV (shared) ============ -->
+  <div style="position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:22px 48px;background:#13221b;border-bottom:1px solid rgba(243,234,217,.1)">
+    <div onClick="{{ goHome }}" style="font-family:'Archivo',sans-serif;font-weight:900;font-size:19px;letter-spacing:.02em;color:#f3ead9;cursor:pointer">ITALIAN BASS FISHING</div>
+    <div style="display:flex;align-items:center;gap:30px;font:600 15px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;color:#f3ead9">
+      <div onClick="{{ goHome }}" style="cursor:pointer;opacity:{{ homeOpacity }}">Home</div>
+      <div onClick="{{ goTours }}" style="cursor:pointer;opacity:{{ toursOpacity }}">Tours &amp; Booking</div>
+      <div onClick="{{ goAbout }}" style="cursor:pointer;opacity:{{ aboutOpacity }}">The Guide</div>
+      <div style="display:flex;gap:6px;font-size:12px;color:rgba(243,234,217,.45)"><span style="color:#f3ead9">EN</span><span>/</span><span>IT</span></div>
+      <div onClick="{{ goTours }}" style="padding:10px 20px;background:#c9a227;color:#13221b;border-radius:2px;font-size:14px;cursor:pointer">Book Now</div>
+    </div>
+  </div>
+
+  <!-- ============ HOME ============ -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+    <div>
+
+      <!-- HERO -->
+      <div style="position:relative;height:640px">
+        <image-slot id="hero-home" style="position:absolute;inset:0;width:100%;height:100%" shape="rect" fit="cover" placeholder="Hero — angler at dawn" src="uploads/654790770_18116548564646226_5420140911386369512_n.jpg"></image-slot>
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg,#13221b 8%,rgba(15,26,20,.1) 50%,rgba(15,26,20,.6))"></div>
+        <div style="position:absolute;left:48px;right:48px;bottom:64px">
+          <div style="font:700 13px/1 'Barlow Condensed',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#c9a227;margin-bottom:20px">#PredatorFishing &nbsp;·&nbsp; Veneto, Italy</div>
+          <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:80px;line-height:.95;letter-spacing:-.01em;color:#f3ead9;max-width:820px">WHERE THE PREDATOR WAITS</div>
+          <div style="font:400 23px/1.45 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.85);max-width:600px;margin-top:22px">Not only fishing — a real interactive experience discovering local nature and wildlife.</div>
+          <div onClick="{{ goTours }}" style="display:inline-block;margin-top:32px;padding:16px 32px;background:#c9a227;color:#13221b;font:600 16px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.06em;cursor:pointer">Discover the Tours</div>
+        </div>
+      </div>
+
+      <!-- KEY POINTS -->
+      <div style="padding:52px 64px;border-bottom:1px solid rgba(243,234,217,.1)">
+        <div style="font:700 11px/1 'Barlow Condensed',sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#c9a227;margin-bottom:26px">Why fish with Roberto</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px 72px">
+          <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid rgba(243,234,217,.1);padding-bottom:18px">
+            <div style="width:8px;height:8px;background:#c9a227;transform:rotate(45deg);flex:none;position:relative;top:-1px"></div>
+            <div style="font:500 20px/1.3 'Barlow Condensed',sans-serif;color:#f3ead9"><span style="color:#c9a227;font-weight:700">40 years</span> chasing predators across Italy</div>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid rgba(243,234,217,.1);padding-bottom:18px">
+            <div style="width:8px;height:8px;background:#c9a227;transform:rotate(45deg);flex:none;position:relative;top:-1px"></div>
+            <div style="font:500 20px/1.3 'Barlow Condensed',sans-serif;color:#f3ead9"><span style="color:#c9a227;font-weight:700">AIGUPP</span> certified guide · ITA 156/22</div>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:16px">
+            <div style="width:8px;height:8px;background:#c9a227;transform:rotate(45deg);flex:none;position:relative;top:-1px"></div>
+            <div style="font:500 20px/1.3 'Barlow Condensed',sans-serif;color:#f3ead9"><span style="color:#c9a227;font-weight:700">Fishery warden</span> — active in restocking</div>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:16px">
+            <div style="width:8px;height:8px;background:#c9a227;transform:rotate(45deg);flex:none;position:relative;top:-1px"></div>
+            <div style="font:500 20px/1.3 'Barlow Condensed',sans-serif;color:#f3ead9"><span style="color:#c9a227;font-weight:700">Multiple</span> national tournament awards</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GUIDE TEASER -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;background:#13221b">
+        <image-slot id="guide-home" style="width:100%;height:520px" shape="rect" placeholder="Portrait — Roberto Bertoncello" src="uploads/464458989_18262458142301627_6602861292225807288_n.jpg"></image-slot>
+        <div style="padding:72px 64px;display:flex;flex-direction:column;justify-content:center;gap:20px">
+          <div style="font:700 12px/1 'Barlow Condensed',sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#c9a227">The Guide</div>
+          <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:38px;line-height:1.05">Roberto Bertoncello</div>
+          <div style="font:400 20px/1.55 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.72);max-width:460px">40 years reading Italian water. Certified AIGUPP guide, fishery warden, and multiple national tournament award winner — now sharing the hunt with anglers from around the world.</div>
+          <div onClick="{{ goAbout }}" style="font:600 15px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;color:#c9a227;cursor:pointer;margin-top:8px">Meet the guide →</div>
+        </div>
+      </div>
+
+      <!-- SPECIES -->
+      <div style="padding:48px 64px;background:#13221b;border-top:1px solid rgba(243,234,217,.1)">
+        <div style="font:700 12px/1 'Barlow Condensed',sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#c9a227;margin-bottom:18px">Target Species</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <sc-for list="{{ species }}" as="s" hint-placeholder-count="6">
+            <div style="font:600 14px/1 'Barlow Condensed',sans-serif;letter-spacing:.03em;text-transform:uppercase;padding:10px 18px;border-radius:999px;background:rgba(201,162,39,.12);color:#c9a227;border:1px solid rgba(201,162,39,.4)">{{ s }}</div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- WATERS TEASER -->
+      <div style="padding:48px 64px;background:#13221b;border-top:1px solid rgba(243,234,217,.1);display:flex;justify-content:space-between;align-items:center">
+        <div style="font:400 19px/1.5 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.72)">Eleven waters across northern &amp; central Italy — lakes, rivers and the Venice Lagoon.</div>
+        <div onClick="{{ goTours }}" style="font:600 15px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;color:#c9a227;cursor:pointer;white-space:nowrap">See the waters &amp; map →</div>
+      </div>
+
+      <!-- TOURS TEASER -->
+      <div style="padding:64px;background:#13221b">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:32px">
+          <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:30px;color:#f3ead9">Discover the Tours</div>
+          <div onClick="{{ goTours }}" style="font:600 15px/1 'Barlow Condensed',sans-serif;letter-spacing:.05em;text-transform:uppercase;color:#c9a227;cursor:pointer">View all →</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+          <sc-for list="{{ tours }}" as="t" hint-placeholder-count="3">
+            <div onClick="{{ goTours }}" style="cursor:pointer">
+              <image-slot id="{{ t.id }}-home" style="width:100%;height:200px" shape="rect" src="{{ t.img }}"></image-slot>
+              <div style="padding-top:16px;font:700 22px/1.15 'Barlow Condensed',sans-serif;color:#f3ead9">{{ t.name }}</div>
+              <div style="font:400 16px/1.4 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.6);margin-top:6px">{{ t.duration }} · {{ t.tagline }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+    </div>
+  </sc-if>
+
+  <!-- ============ TOURS & BOOKING ============ -->
+  <sc-if value="{{ isTours }}">
+    <div>
+
+      <div style="padding:76px 64px 56px;background:#13221b">
+        <div style="font:700 13px/1 'Barlow Condensed',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#c9a227;margin-bottom:18px">Book a Day on the Water</div>
+        <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:52px;line-height:1.02;color:#f3ead9;max-width:760px">Guided predator fishing, Catch &amp; Release</div>
+        <div style="font:400 20px/1.5 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.75);max-width:620px;margin-top:20px">Spinning &amp; casting with artificial lures across Italy's lakes, rivers and the Venice Lagoon. Rental gear available. Every booking is confirmed personally by Roberto.</div>
+      </div>
+
+      <!-- TOUR CARDS -->
+      <div style="padding:64px 64px 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(243,234,217,.15);border-bottom:0">
+        <sc-for list="{{ tours }}" as="t" hint-placeholder-count="3">
+          <div style="padding:36px;border-right:1px solid rgba(243,234,217,.15);display:flex;flex-direction:column;gap:16px">
+            <image-slot id="{{ t.id }}-tours" style="width:100%;height:180px" shape="rect" radius="2" src="{{ t.img }}"></image-slot>
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:24px">{{ t.name }}</div>
+            <div style="font:400 17px/1.5 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.68)">{{ t.desc }}</div>
+            <div style="display:flex;flex-direction:column;gap:6px;font:500 15px/1.4 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.6);margin-top:6px">
+              <div>Duration: {{ t.duration }}</div>
+              <div>Group size: {{ t.group }}</div>
+              <div>Species: {{ t.tagline }}</div>
+            </div>
+            <div onClick="{{ openCard }}" data-tour="{{ t.id }}" style="margin-top:auto;padding:13px 22px;background:#c9a227;color:#13221b;text-align:center;font:600 14px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;cursor:pointer">Enquire to Book</div>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- HOW BOOKING WORKS (timeline) -->
+      <div style="padding:44px 64px 60px;background:#13221b;border:1px solid rgba(243,234,217,.15);border-top:0">
+        <div style="font:700 12px/1 'Barlow Condensed',sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#c9a227;margin-bottom:40px">How Booking Works</div>
+        <div style="position:relative;display:grid;grid-template-columns:repeat(3,1fr)">
+          <div style="position:absolute;top:23px;left:16.666%;right:16.666%;height:2px;background:rgba(243,234,217,.22);z-index:0"></div>
+          <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:0 28px">
+            <div style="width:46px;height:46px;border-radius:50%;border:2px solid #c9a227;background:#13221b;color:#c9a227;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:900;font-size:17px">01</div>
+            <div style="font:600 19px/1.3 'Barlow Condensed',sans-serif">Send an enquiry</div>
+            <div style="font:400 16px/1.45 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.65);max-width:260px">Pick a tour and preferred dates.</div>
+          </div>
+          <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:0 28px">
+            <div style="width:46px;height:46px;border-radius:50%;border:2px solid #c9a227;background:#13221b;color:#c9a227;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:900;font-size:17px">02</div>
+            <div style="font:600 19px/1.3 'Barlow Condensed',sans-serif">Personal confirmation</div>
+            <div style="font:400 16px/1.45 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.65);max-width:260px">Roberto confirms your date directly, based on water and weather conditions.</div>
+          </div>
+          <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:0 28px">
+            <div style="width:46px;height:46px;border-radius:50%;border:2px solid #c9a227;background:#13221b;color:#c9a227;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:900;font-size:17px">03</div>
+            <div style="font:600 19px/1.3 'Barlow Condensed',sans-serif">Meet at the water</div>
+            <div style="font:400 16px/1.45 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.65);max-width:260px">Gear rental available on request — just bring yourself.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WATERS INDEX + MAP -->
+      <div style="padding:64px;background:#13221b;border-top:1px solid rgba(243,234,217,.1)">
+        <div style="font:700 12px/1 'Barlow Condensed',sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#c9a227;margin-bottom:10px">Where We Fish</div>
+        <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:32px;margin-bottom:36px">Index of Waters</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start">
+          <div style="position:relative;width:100%;aspect-ratio:100/120;background:#13221b;border-radius:4px">
+            <svg viewBox="0 0 100 120" style="position:absolute;inset:0;width:100%;height:100%">
+              <polygon points="11.5,12.0 24.6,5.4 38.5,1.1 59.2,5.4 60.8,15.2 49.2,17.4 48.5,31.7 63.1,51.2 76.2,55.7 86.2,72.0 81.5,78.6 74.6,96.0 73.8,99.2 76.2,88.3 71.5,76.3 63.1,67.1 57.7,63.2 50.0,61.1 39.2,46.9 33.1,36.0 30.0,28.3 23.1,28.3 12.3,32.8" fill="#22322a" stroke="#c9a227" stroke-width="0.4" stroke-opacity="0.5"></polygon>
+              <sc-for list="{{ waters }}" as="w" hint-placeholder-count="9">
+                <circle cx="{{ w.x }}" cy="{{ w.y }}" r="1.8" fill="#c9a227"></circle>
+                <text x="{{ w.xLabel }}" y="{{ w.y }}" fill="#f3ead9" font-size="3.2" font-family="Barlow Condensed, sans-serif" dominant-baseline="middle">{{ w.n }}</text>
+              </sc-for>
+            </svg>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0">
+            <sc-for list="{{ waters }}" as="w" hint-placeholder-count="9">
+              <div style="display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid rgba(243,234,217,.12)">
+                <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:15px;color:#c9a227;width:22px">{{ w.n }}</div>
+                <div style="font:500 19px/1.3 'Barlow Condensed',sans-serif">{{ w.name }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="font:400 13px/1.4 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.4);margin-top:16px">Schematic map, not to scale.</div>
+      </div>
+
+      <div style="padding:22px 64px;display:flex;justify-content:space-between;font:400 13px/1 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.5);background:#13221b">
+        <div>© Italian Bass Fishing — Veneto, Italy</div><div>#PredatorFishing</div>
+      </div>
+
+    </div>
+  </sc-if>
+
+  <!-- ============ THE GUIDE / ABOUT ============ -->
+  <sc-if value="{{ isAbout }}">
+    <div>
+
+      <div style="position:relative;height:520px">
+        <image-slot id="hero-about" style="position:absolute;inset:0;width:100%;height:100%" shape="rect" fit="cover" src="uploads/464458989_18262458142301627_6602861292225807288_n.jpg"></image-slot>
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg,#13221b 15%,rgba(15,26,20,.05) 55%,rgba(15,26,20,.45))"></div>
+        <div style="position:absolute;left:64px;right:64px;bottom:56px">
+          <div style="font:700 13px/1 'Barlow Condensed',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#c9a227;margin-bottom:16px">The Guide</div>
+          <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:60px;line-height:1;color:#f3ead9">Roberto Bertoncello</div>
+        </div>
+      </div>
+
+      <!-- BIO -->
+      <div style="padding:64px;max-width:760px">
+        <div style="font:400 21px/1.6 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.78)">Roberto has spent 40 years reading Italian water — from Alpine lakes to the tidal channels of the Venice Lagoon. A certified AIGUPP Fishing Guide (ITA 156/22), he is also a fishery warden, active in local fish restocking, and a familiar face at national predator-fishing tournaments, where he has taken home multiple awards — including 1st of 30 boats in the qualifying round of the 2021 Italian Predator Boat Championship at Lago di Endine.</div>
+        <div style="font:400 21px/1.6 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.78);margin-top:20px">His boat is custom-built to his own specification for chasing bass, pike, zander and perch. Roberto speaks English and regularly guides visiting anglers through the Venice Lagoon — not only fishing, but a real interactive experience discovering local nature and wildlife.</div>
+      </div>
+
+      <!-- CREDENTIALS -->
+      <div style="padding:8px 64px 28px;display:flex;gap:12px;flex-wrap:wrap">
+        <div style="font:600 14px/1 'Barlow Condensed',sans-serif;letter-spacing:.03em;text-transform:uppercase;padding:11px 18px;border-radius:999px;background:rgba(201,162,39,.12);color:#c9a227;border:1px solid rgba(201,162,39,.4)">40 years experience</div>
+        <div style="font:600 14px/1 'Barlow Condensed',sans-serif;letter-spacing:.03em;text-transform:uppercase;padding:11px 18px;border-radius:999px;background:rgba(201,162,39,.12);color:#c9a227;border:1px solid rgba(201,162,39,.4)">AIGUPP certified — ITA 156/22</div>
+        <div style="font:600 14px/1 'Barlow Condensed',sans-serif;letter-spacing:.03em;text-transform:uppercase;padding:11px 18px;border-radius:999px;background:rgba(201,162,39,.12);color:#c9a227;border:1px solid rgba(201,162,39,.4)">Fishery warden &amp; restocking</div>
+        <div style="font:600 14px/1 'Barlow Condensed',sans-serif;letter-spacing:.03em;text-transform:uppercase;padding:11px 18px;border-radius:999px;background:rgba(201,162,39,.12);color:#c9a227;border:1px solid rgba(201,162,39,.4)">Multiple national awards</div>
+        <div style="font:600 14px/1 'Barlow Condensed',sans-serif;letter-spacing:.03em;text-transform:uppercase;padding:11px 18px;border-radius:999px;background:rgba(201,162,39,.12);color:#c9a227;border:1px solid rgba(201,162,39,.4)">Custom-built bass boat</div>
+        <div style="font:600 14px/1 'Barlow Condensed',sans-serif;letter-spacing:.03em;text-transform:uppercase;padding:11px 18px;border-radius:999px;background:rgba(201,162,39,.12);color:#c9a227;border:1px solid rgba(201,162,39,.4)">English spoken</div>
+      </div>
+
+      <!-- GALLERY -->
+      <div style="padding:64px;background:#13221b">
+        <div style="font:700 12px/1 'Barlow Condensed',sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#c9a227;margin-bottom:20px">On the Water</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+          <image-slot id="gallery-1" style="width:100%;height:220px" shape="rect" radius="2" src="uploads/549240858_18302955532301627_1679975992775126115_n.jpg"></image-slot>
+          <image-slot id="gallery-2" style="width:100%;height:220px" shape="rect" radius="2" src="uploads/650077968_18084383602992498_5387049472078248950_n.jpg"></image-slot>
+          <image-slot id="gallery-3" style="width:100%;height:220px" shape="rect" radius="2" src="uploads/551059173_18303133603301627_6685483260568327361_n.jpg"></image-slot>
+          <image-slot id="gallery-4" style="width:100%;height:220px" shape="rect" radius="2" src="uploads/719222990_18341522545301627_5857281317948476718_n.jpg"></image-slot>
+        </div>
+      </div>
+
+      <!-- BEYOND FISHING -->
+      <div style="padding:56px 64px;background:#13221b;border-top:1px solid rgba(243,234,217,.1);display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div style="font:700 12px/1 'Barlow Condensed',sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#c9a227;margin-bottom:8px">Beyond Fishing</div>
+          <div style="font:400 19px/1.5 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.72);max-width:560px">Roberto is also a keen cyclist across the Veneto countryside — a second guided experience, coming soon.</div>
+        </div>
+      </div>
+
+      <div style="padding:22px 64px;display:flex;justify-content:space-between;font:400 13px/1 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.5);background:#13221b">
+        <div>© Italian Bass Fishing — Veneto, Italy</div><div>#PredatorFishing</div>
+      </div>
+
+    </div>
+  </sc-if>
+
+  <!-- ============ BOOKING MODAL ============ -->
+  <sc-if value="{{ booking }}">
+    <div style="position:fixed;inset:0;z-index:50;display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;overflow:auto;background:rgba(6,12,9,.72)">
+      <div style="position:relative;width:100%;max-width:920px;background:#182a20;border:1px solid rgba(243,234,217,.14);border-radius:6px;overflow:hidden">
+        <div onClick="{{ closeBooking }}" style="position:absolute;top:16px;right:18px;z-index:3;width:34px;height:34px;border-radius:50%;background:rgba(243,234,217,.12);color:#f3ead9;display:flex;align-items:center;justify-content:center;font:400 22px/1 sans-serif;cursor:pointer">×</div>
+
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:64px 56px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px">
+            <div style="width:56px;height:56px;border-radius:50%;border:2px solid #c9a227;color:#c9a227;display:flex;align-items:center;justify-content:center;font:400 26px/1 sans-serif">✓</div>
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:30px;color:#f3ead9">Request sent</div>
+            <div style="font:400 18px/1.55 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.75);max-width:520px">We've noted your request for <b style="color:#f3ead9">{{ bt.name }}</b> on <b style="color:#f3ead9">{{ selPretty }}</b> for {{ partyLabel }}. A summary email with the full booking and payment details is on its way.</div>
+            <div style="margin-top:6px;padding:18px 22px;background:rgba(201,162,39,.1);border:1px solid rgba(201,162,39,.35);border-radius:6px;font:400 16px/1.5 'Barlow Condensed',sans-serif;color:#f3ead9;max-width:520px">Please wait for a direct message from Roberto to confirm your date before making any payment or arrangement — nothing is booked until he confirms.</div>
+            <div onClick="{{ closeBooking }}" style="margin-top:10px;padding:13px 30px;background:#c9a227;color:#13221b;font:600 15px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;cursor:pointer">Done</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+            <div style="display:flex;flex-direction:column">
+              <image-slot id="modal-img" style="width:100%;height:200px" shape="rect" src="{{ bt.img }}"></image-slot>
+              <div style="padding:26px 30px;display:flex;flex-direction:column;gap:13px">
+                <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:23px;color:#f3ead9">{{ bt.name }}</div>
+                <div style="font:400 16px/1.5 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.7)">{{ bt.desc }}</div>
+                <div style="display:flex;align-items:baseline;gap:8px">
+                  <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:30px;color:#c9a227">{{ perPersonLabel }}</div>
+                  <div style="font:500 15px/1 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.6)">per person · {{ bt.duration }}</div>
+                </div>
+                <div style="height:1px;background:rgba(243,234,217,.12);margin:3px 0"></div>
+                <div style="font:700 11px/1 'Barlow Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#c9a227">Payment &amp; Cancellation</div>
+                <div style="display:flex;flex-direction:column;gap:9px;font:400 14px/1.4 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.72)">
+                  <div>· Payment by bank transfer (bonifico).</div>
+                  <div>· A {{ deposit }}% deposit is required to hold your date.</div>
+                  <div>· Full refund if you cancel at least {{ fullRefundDays }} days before.</div>
+                  <div>· Cancel within {{ partialRefundDays }} days and the deposit is retained; the balance is refunded.</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding:26px 30px;border-left:1px solid rgba(243,234,217,.12);display:flex;flex-direction:column;gap:16px">
+              <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:20px;color:#f3ead9">Request a date</div>
+              <div>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+                  <div onClick="{{ prevMonth }}" style="width:30px;height:30px;border-radius:6px;border:1px solid rgba(243,234,217,.18);color:#f3ead9;display:flex;align-items:center;justify-content:center;cursor:pointer;font:400 17px/1 sans-serif">‹</div>
+                  <div style="font:600 16px/1 'Barlow Condensed',sans-serif;color:#f3ead9">{{ calLabel }}</div>
+                  <div onClick="{{ nextMonth }}" style="width:30px;height:30px;border-radius:6px;border:1px solid rgba(243,234,217,.18);color:#f3ead9;display:flex;align-items:center;justify-content:center;cursor:pointer;font:400 17px/1 sans-serif">›</div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px;text-align:center;font:600 11px/1 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.4)">
+                  <div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div><div>S</div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px">
+                  <sc-for list="{{ calCells }}" as="c" hint-placeholder-count="35">
+                    <div onClick="{{ pickDay }}" data-iso="{{ c.iso }}" data-past="{{ c.past }}" style="{{ c.style }}">{{ c.day }}</div>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div style="font:500 15px/1 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.75)">Anglers</div>
+                <div style="display:flex;align-items:center;gap:12px">
+                  <div onClick="{{ decParty }}" style="width:30px;height:30px;border-radius:6px;border:1px solid rgba(243,234,217,.18);color:#f3ead9;display:flex;align-items:center;justify-content:center;cursor:pointer;font:400 18px/1 sans-serif">–</div>
+                  <div style="font:600 17px/1 'Barlow Condensed',sans-serif;color:#f3ead9;min-width:20px;text-align:center">{{ party }}</div>
+                  <div onClick="{{ incParty }}" style="width:30px;height:30px;border-radius:6px;border:1px solid rgba(243,234,217,.18);color:#f3ead9;display:flex;align-items:center;justify-content:center;cursor:pointer;font:400 18px/1 sans-serif">+</div>
+                </div>
+              </div>
+              <div style="font:400 13px/1.4 'Barlow Condensed',sans-serif;color:rgba(201,162,39,.9);margin-top:-4px">The more anglers share the boat, the lower the per-person rate.</div>
+              <div style="background:rgba(243,234,217,.05);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;font:500 14px/1.3 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.7)">
+                <div style="display:flex;justify-content:space-between"><span>{{ perPersonLabel }} × {{ party }} anglers</span><span style="color:#f3ead9">{{ totalLabel }}</span></div>
+                <div style="display:flex;justify-content:space-between"><span>Deposit ({{ deposit }}%)</span><span style="color:#f3ead9">{{ depositLabel }}</span></div>
+              </div>
+              <div onClick="{{ submitRequest }}" style="padding:15px;background:#c9a227;color:#13221b;text-align:center;font:600 15px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;cursor:pointer;opacity:{{ submitOpacity }}">Send booking request</div>
+              <div style="font:400 12.5px/1.4 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.45);text-align:center">This is a request, not a confirmed booking. You'll receive a summary email, then a direct message from Roberto.</div>
+            </div>
+          </div>
+        </sc-if>
+
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;currency&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;€&quot;, &quot;$&quot;, &quot;£&quot;], &quot;default&quot;: &quot;€&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Pricing&quot; },
+  &quot;fullDayPrice&quot;: { &quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: 300, &quot;min&quot;: 0, &quot;max&quot;: 2000, &quot;step&quot;: 10, &quot;unit&quot;: &quot; (1 angler)&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Pricing&quot; },
+  &quot;halfDayPrice&quot;: { &quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: 180, &quot;min&quot;: 0, &quot;max&quot;: 2000, &quot;step&quot;: 10, &quot;unit&quot;: &quot; (1 angler)&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Pricing&quot; },
+  &quot;lagoonPrice&quot;: { &quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: 350, &quot;min&quot;: 0, &quot;max&quot;: 2000, &quot;step&quot;: 10, &quot;unit&quot;: &quot; (1 angler)&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Pricing&quot; },
+  &quot;depositPercent&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 30, &quot;min&quot;: 0, &quot;max&quot;: 100, &quot;step&quot;: 5, &quot;unit&quot;: &quot;%&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Cancellation policy&quot; },
+  &quot;fullRefundDays&quot;: { &quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: 15, &quot;min&quot;: 1, &quot;max&quot;: 90, &quot;step&quot;: 1, &quot;unit&quot;: &quot; days&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Cancellation policy&quot; },
+  &quot;partialRefundDays&quot;: { &quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: 3, &quot;min&quot;: 1, &quot;max&quot;: 60, &quot;step&quot;: 1, &quot;unit&quot;: &quot; days&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Cancellation policy&quot; }
+}">
+class Component extends DCLogic {
+  _today = new Date();
+  state = { page: 'home', booking: null, submitted: false, party: 2, selDate: null, calY: this._today.getFullYear(), calM: this._today.getMonth() };
+
+  openBooking(id) { this.setState({ booking: id, submitted: false, selDate: null, party: 2, calY: this._today.getFullYear(), calM: this._today.getMonth() }); }
+  closeBooking() { this.setState({ booking: null }); }
+  prevMonth() { let m = this.state.calM - 1, y = this.state.calY; if (m < 0) { m = 11; y--; } this.setState({ calM: m, calY: y }); }
+  nextMonth() { let m = this.state.calM + 1, y = this.state.calY; if (m > 11) { m = 0; y++; } this.setState({ calM: m, calY: y }); }
+  selectDay(iso) { this.setState({ selDate: iso }); }
+  setParty(n) { this.setState({ party: Math.max(1, Math.min(6, n)) }); }
+  submitRequest() { if (this.state.selDate) this.setState({ submitted: true }); }
+
+  buildCalendar() {
+    const y = this.state.calY, m = this.state.calM;
+    const first = new Date(y, m, 1);
+    const startOffset = (first.getDay() + 6) % 7;
+    const nDays = new Date(y, m + 1, 0).getDate();
+    const t = this._today;
+    const todayMid = new Date(t.getFullYear(), t.getMonth(), t.getDate());
+    const base = "height:38px;display:flex;align-items:center;justify-content:center;font:500 15px/1 'Barlow Condensed',sans-serif;border-radius:6px;";
+    const cells = [];
+    for (let i = 0; i < startOffset; i++) cells.push({ key: 'b' + i, day: '', style: 'height:38px;visibility:hidden' });
+    for (let d = 1; d <= nDays; d++) {
+      const date = new Date(y, m, d);
+      const iso = y + '-' + String(m + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+      const past = date < todayMid;
+      const sel = iso === this.state.selDate;
+      let style;
+      if (past) style = base + 'color:rgba(243,234,217,.2);cursor:default';
+      else if (sel) style = base + 'background:#c9a227;color:#13221b;font-weight:700;cursor:pointer';
+      else style = base + 'color:#f3ead9;cursor:pointer;border:1px solid rgba(243,234,217,.14)';
+      cells.push({ key: iso, day: d, iso, past: past ? '1' : '0', style });
+    }
+    const label = first.toLocaleString('en-US', { month: 'long' }) + ' ' + y;
+    return { label, cells };
+  }
+
+  waters = [
+    { n: 1, name: 'Lake Garda', x: 34, xLabel: 34, y: 15 },
+    { n: 2, name: 'Lake Iseo', x: 29, xLabel: 29, y: 13 },
+    { n: 3, name: 'Lake Corlo', x: 44, xLabel: 44, y: 10 },
+    { n: 4, name: 'Lake Revine', x: 48, xLabel: 48, y: 11 },
+    { n: 5, name: 'Lake Bolsena', x: 45, xLabel: 45, y: 48 },
+    { n: 6, name: "Brenta River, Strà", x: 43, xLabel: 43, y: 17 },
+    { n: 7, name: 'Bacchiglione', x: 46, xLabel: 46, y: 19 },
+    { n: 8, name: 'Sile', x: 49, xLabel: 49, y: 15 },
+    { n: 9, name: 'Venice Lagoon, Burano', x: 51, xLabel: 51, y: 17 },
+    { n: 10, name: 'Lake Bilancino', x: 40, xLabel: 40, y: 33 },
+    { n: 11, name: 'Lake Massaciuccoli', x: 33, xLabel: 33, y: 35 },
+  ];
+
+  species = ['Bass', 'Pike', 'Zander', 'Perch', 'Sea Bass', 'Gilthead Bream'];
+
+  tours = [
+    {
+      id: 'full',
+      name: 'Full-Day Predator Hunt',
+      duration: '8 hours',
+      group: '1–3 anglers',
+      tagline: 'Bass, pike & zander',
+      desc: 'A complete day chasing bass, pike and zander across lakes and rivers — spinning and casting with artificial lures, catch & release.',
+      img: 'uploads/625037294_18085468679332504_7705878416442635320_n.jpg',
+    },
+    {
+      id: 'half',
+      name: 'Half-Day Spin & Cast',
+      duration: '4 hours',
+      group: '1–3 anglers',
+      tagline: 'Perch & zander',
+      desc: 'A focused morning or afternoon on the water — ideal first outing for newcomers to predator fishing.',
+      img: 'uploads/622601965_18087845009033997_4113553314975789302_n.jpg',
+    },
+    {
+      id: 'lagoon',
+      name: 'Lagoon Discovery, Burano',
+      duration: 'Full day',
+      group: '1–3 anglers',
+      tagline: 'Sea bass & gilthead bream',
+      desc: 'A full day threading the channels of the Venice Lagoon toward Burano — sea bass and bream among the birdlife and fishing villages.',
+      img: 'uploads/719222990_18341522545301627_5857281317948476718_n.jpg',
+    },
+  ];
+
+  renderVals() {
+    const page = this.state.page;
+    const P = this.props || {};
+    const cur = P.currency ?? '€';
+    const deposit = P.depositPercent ?? 30;
+    const fullRefundDays = P.fullRefundDays ?? 15;
+    const partialRefundDays = P.partialRefundDays ?? 3;
+    const priceMap = { full: P.fullDayPrice ?? 290, half: P.halfDayPrice ?? 170, lagoon: P.lagoonPrice ?? 330 };
+    const tours = this.tours.map((t) => ({
+      ...t,
+      price: priceMap[t.id],
+      priceLabel: cur + priceMap[t.id],
+      open: () => this.openBooking(t.id),
+    }));
+    const bt = tours.find((t) => t.id === this.state.booking) || null;
+    const party = this.state.party;
+    const cal = this.buildCalendar();
+    const selDate = this.state.selDate;
+    const selPretty = selDate
+      ? new Date(selDate + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
+      : '';
+    // Group pricing: the more anglers, the lower the per-person rate.
+    const soloPrice = bt ? bt.price : 0;
+    const factors = [1, 0.667, 0.5, 0.417, 0.367, 0.333];
+    const perPerson = Math.round(soloPrice * (factors[Math.min(6, party) - 1] || factors[5]));
+    const total = perPerson * party;
+    const depositAmt = Math.round(total * deposit / 100);
+    return {
+      page,
+      isHome: page === 'home',
+      isTours: page === 'tours',
+      isAbout: page === 'about',
+      homeOpacity: page === 'home' ? 1 : 0.55,
+      toursOpacity: page === 'tours' ? 1 : 0.55,
+      aboutOpacity: page === 'about' ? 1 : 0.55,
+      goHome: () => this.setState({ page: 'home' }),
+      goTours: () => this.setState({ page: 'tours' }),
+      goAbout: () => this.setState({ page: 'about' }),
+      waters: this.waters,
+      species: this.species,
+      tours,
+      // ── booking flow ──
+      booking: !!this.state.booking,
+      bt,
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      closeBooking: () => this.closeBooking(),
+      openCard: (e) => this.openBooking(e.currentTarget.dataset.tour),
+      pickDay: (e) => { const el = e.currentTarget; if (!el.dataset.iso || el.dataset.past === '1') return; this.selectDay(el.dataset.iso); },
+      cur, deposit, fullRefundDays, partialRefundDays,
+      party,
+      partyLabel: party + (party === 1 ? ' angler' : ' anglers'),
+      incParty: () => this.setParty(party + 1),
+      decParty: () => this.setParty(party - 1),
+      calLabel: cal.label,
+      calCells: cal.cells,
+      prevMonth: () => this.prevMonth(),
+      nextMonth: () => this.nextMonth(),
+      selDate, selPretty,
+      perPersonLabel: cur + perPerson,
+      totalLabel: cur + total,
+      depositLabel: cur + depositAmt,
+      submitRequest: () => this.submitRequest(),
+      submitOpacity: selDate ? 1 : 0.4,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

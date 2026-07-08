@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#eee8dc;font-family:'Barlow Condensed',sans-serif}
+  .dv-turn{padding:40px 44px 40px;scroll-margin-top:16px}
+  .dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 22px}
+  .dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#142019;color:#fff;border-radius:4px;text-decoration:none}
+  .dv-tname{font:600 14px/1.2 'Barlow Condensed',sans-serif;letter-spacing:.02em;color:#142019}
+  .dv-opts{display:flex;flex-direction:column;gap:26px;align-items:flex-start}
+  .dv-opt{display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px;width:1120px;max-width:100%}
+  .dv-oid{font:600 11px ui-monospace,Menlo,monospace;padding:3px 8px;background:rgba(20,32,25,.1);color:#142019;border-radius:5px;text-decoration:none}
+  .dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 12px/1.3 'Barlow Condensed',sans-serif;color:rgba(20,32,25,.6)}
+  .dv-card{width:100%;background:#13221b;border:1px solid rgba(0,0,0,.12);border-radius:6px;overflow:hidden}
+  .dv-opt:target .dv-oid{background:#c9a227;color:#142019}
+  .dv-next{margin:24px 0 0;font:15px/1.5 'Barlow Condensed',sans-serif;color:rgba(20,32,25,.6)}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t1">
+  <div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Highlights band — 2 new options</span></div>
+  <div class="dv-opts">
+
+    <!-- CURRENT (reference) -->
+    <div class="dv-opt" id="1a">
+      <div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Current — big gold figures (for reference)</div>
+      <div class="dv-card">
+        <div style="padding:50px 56px;display:flex;flex-wrap:wrap;gap:56px">
+          <div>
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:42px;line-height:1;color:#c9a227">40</div>
+            <div style="font:500 15px/1.3 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.6);text-transform:uppercase;letter-spacing:.04em;margin-top:8px">Years chasing predators</div>
+          </div>
+          <div>
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:42px;line-height:1;color:#c9a227">AIGUPP</div>
+            <div style="font:500 15px/1.3 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.6);text-transform:uppercase;letter-spacing:.04em;margin-top:8px">Certified guide · ITA 156/22</div>
+          </div>
+          <div>
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:42px;line-height:1;color:#c9a227">Warden</div>
+            <div style="font:500 15px/1.3 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.6);text-transform:uppercase;letter-spacing:.04em;margin-top:8px">Fishery warden &amp; restocking</div>
+          </div>
+          <div>
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:42px;line-height:1;color:#c9a227">Multiple</div>
+            <div style="font:500 15px/1.3 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.6);text-transform:uppercase;letter-spacing:.04em;margin-top:8px">National tournament awards</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 1B — cream values, gold labels, ruled columns -->
+    <div class="dv-opt" id="1b">
+      <div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Ruled ledger — cream figures, gold small-caps labels, thin dividers</div>
+      <div class="dv-card">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr)">
+          <div style="padding:44px 40px;border-right:1px solid rgba(243,234,217,.12)">
+            <div style="font:700 11px/1 'Barlow Condensed',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#c9a227;margin-bottom:16px">Experience</div>
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:34px;line-height:1;color:#f3ead9">40 years</div>
+            <div style="font:400 15px/1.4 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.6);margin-top:8px">Chasing predators across Italy</div>
+          </div>
+          <div style="padding:44px 40px;border-right:1px solid rgba(243,234,217,.12)">
+            <div style="font:700 11px/1 'Barlow Condensed',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#c9a227;margin-bottom:16px">Certification</div>
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:34px;line-height:1;color:#f3ead9">AIGUPP</div>
+            <div style="font:400 15px/1.4 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.6);margin-top:8px">Certified guide · ITA 156/22</div>
+          </div>
+          <div style="padding:44px 40px;border-right:1px solid rgba(243,234,217,.12)">
+            <div style="font:700 11px/1 'Barlow Condensed',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#c9a227;margin-bottom:16px">Stewardship</div>
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:34px;line-height:1;color:#f3ead9">Warden</div>
+            <div style="font:400 15px/1.4 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.6);margin-top:8px">Fishery warden &amp; restocking</div>
+          </div>
+          <div style="padding:44px 40px">
+            <div style="font:700 11px/1 'Barlow Condensed',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#c9a227;margin-bottom:16px">Palmarès</div>
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:34px;line-height:1;color:#f3ead9">Multiple</div>
+            <div style="font:400 15px/1.4 'Barlow Condensed',sans-serif;color:rgba(243,234,217,.6);margin-top:8px">National tournament awards</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 1C — quiet checklist with gold markers -->
+    <div class="dv-opt" id="1c">
+      <div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Quiet checklist — single-line statements with a gold marker</div>
+      <div class="dv-card">
+        <div style="padding:48px 56px">
+          <div style="font:700 11px/1 'Barlow Condensed',sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#c9a227;margin-bottom:26px">Why fish with Roberto</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px 64px">
+            <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid rgba(243,234,217,.1);padding-bottom:18px">
+              <div style="width:8px;height:8px;background:#c9a227;transform:rotate(45deg);flex:none;position:relative;top:-1px"></div>
+              <div style="font:500 20px/1.3 'Barlow Condensed',sans-serif;color:#f3ead9"><span style="color:#c9a227;font-weight:700">40 years</span> chasing predators across Italy</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid rgba(243,234,217,.1);padding-bottom:18px">
+              <div style="width:8px;height:8px;background:#c9a227;transform:rotate(45deg);flex:none;position:relative;top:-1px"></div>
+              <div style="font:500 20px/1.3 'Barlow Condensed',sans-serif;color:#f3ead9"><span style="color:#c9a227;font-weight:700">AIGUPP</span> certified guide · ITA 156/22</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:16px">
+              <div style="width:8px;height:8px;background:#c9a227;transform:rotate(45deg);flex:none;position:relative;top:-1px"></div>
+              <div style="font:500 20px/1.3 'Barlow Condensed',sans-serif;color:#f3ead9"><span style="color:#c9a227;font-weight:700">Fishery warden</span> — active in restocking</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:16px">
+              <div style="width:8px;height:8px;background:#c9a227;transform:rotate(45deg);flex:none;position:relative;top:-1px"></div>
+              <div style="font:500 20px/1.3 'Barlow Condensed',sans-serif;color:#f3ead9"><span style="color:#c9a227;font-weight:700">Multiple</span> national tournament awards</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p class="dv-next">Tell me which to apply: "<a class="dv-oid" href="#1b">1b</a> on the site" or "<a class="dv-oid" href="#1c">1c</a> on the site" — or ask for another direction.</p>
+</section>
+
+</x-dc>
+</body>
+</html>
