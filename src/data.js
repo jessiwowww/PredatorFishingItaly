@@ -1,12 +1,13 @@
 // The 11 waters, the 3 tours and the target species.
 // Water characteristics researched online — to review with Roberto.
-// x / y are pin coordinates on the schematic SVG map (viewBox 0 0 100 120).
+// x / y are pin coordinates on the SVG map (viewBox 0 0 100 120), derived
+// from real lat/lon: x = (lon - 6.5) * 8.1 · y = (47.2 - lat) * 11.2
 
 export const SPECIES = ['bass', 'pike', 'zander', 'perch', 'seabass', 'bream', 'asp'];
 
 export const WATERS = [
   {
-    id: 'garda', n: 1, name: 'Lake Garda', band: 'bigLakes', x: 34, y: 15,
+    id: 'garda', n: 1, name: 'Lake Garda', band: 'bigLakes', x: 33.6, y: 17.4,
     region: { en: 'Lombardy / Veneto', it: 'Lombardia / Veneto' },
     type: { en: 'Great alpine lake', it: 'Grande lago alpino' },
     species: ['pike', 'perch'],
@@ -17,7 +18,7 @@ export const WATERS = [
     },
   },
   {
-    id: 'iseo', n: 2, name: 'Lake Iseo', band: 'bigLakes', x: 29, y: 13,
+    id: 'iseo', n: 2, name: 'Lake Iseo', band: 'bigLakes', x: 29, y: 16.6,
     region: { en: 'Lombardy', it: 'Lombardia' },
     type: { en: 'Deep glacial lake', it: 'Profondo lago glaciale' },
     species: ['perch', 'pike', 'zander'],
@@ -28,7 +29,7 @@ export const WATERS = [
     },
   },
   {
-    id: 'corlo', n: 3, name: 'Lake Corlo', band: 'veneto', x: 44, y: 10,
+    id: 'corlo', n: 3, name: 'Lake Corlo', band: 'veneto', x: 42.1, y: 13.2,
     region: { en: 'Veneto — Dolomites', it: 'Veneto — Dolomiti' },
     type: { en: 'Turquoise mountain reservoir', it: 'Lago artificiale di montagna' },
     species: ['pike', 'perch', 'zander'],
@@ -39,7 +40,7 @@ export const WATERS = [
     },
   },
   {
-    id: 'revine', n: 4, name: 'Lake Revine', band: 'veneto', x: 48, y: 11,
+    id: 'revine', n: 4, name: 'Lake Revine', band: 'veneto', x: 46.5, y: 12.8,
     region: { en: 'Veneto — Treviso pre-Alps', it: 'Veneto — Prealpi trevigiane' },
     type: { en: 'Twin pre-alpine lakes', it: 'Laghi gemelli prealpini' },
     species: ['bass', 'pike', 'zander', 'perch'],
@@ -50,7 +51,7 @@ export const WATERS = [
     },
   },
   {
-    id: 'bolsena', n: 5, name: 'Lake Bolsena', band: 'central', x: 45, y: 48,
+    id: 'bolsena', n: 5, name: 'Lake Bolsena', band: 'central', x: 44, y: 51.5,
     region: { en: 'Lazio — central Italy', it: 'Lazio — Italia centrale' },
     type: { en: 'Volcanic crater lake', it: 'Lago vulcanico' },
     species: ['bass', 'pike', 'perch'],
@@ -61,7 +62,7 @@ export const WATERS = [
     },
   },
   {
-    id: 'brenta', n: 6, name: 'Brenta River, Strà', band: 'veneto', x: 43, y: 17,
+    id: 'brenta', n: 6, name: 'Brenta River, Strà', band: 'veneto', x: 44.7, y: 19.6,
     region: { en: 'Veneto — Riviera del Brenta', it: 'Veneto — Riviera del Brenta' },
     type: { en: 'Lowland river', it: 'Fiume di pianura' },
     species: ['pike', 'asp'],
@@ -72,7 +73,7 @@ export const WATERS = [
     },
   },
   {
-    id: 'bacchiglione', n: 7, name: 'Bacchiglione River', band: 'veneto', x: 46, y: 19,
+    id: 'bacchiglione', n: 7, name: 'Bacchiglione River', band: 'veneto', x: 41.8, y: 21.8,
     region: { en: 'Veneto — Padua', it: 'Veneto — Padova' },
     type: { en: 'Resurgence river', it: 'Fiume di risorgiva' },
     species: ['pike', 'perch'],
@@ -83,7 +84,7 @@ export const WATERS = [
     },
   },
   {
-    id: 'sile', n: 8, name: 'Sile River', band: 'veneto', x: 49, y: 15,
+    id: 'sile', n: 8, name: 'Sile River', band: 'veneto', x: 46.9, y: 16.4,
     region: { en: 'Veneto — Treviso', it: 'Veneto — Treviso' },
     type: { en: 'Spring-fed river', it: 'Fiume di risorgiva' },
     species: ['pike', 'bass'],
@@ -94,7 +95,7 @@ export const WATERS = [
     },
   },
   {
-    id: 'lagoon', n: 9, name: 'Venice Lagoon, Burano', band: 'lagoon', x: 51, y: 17,
+    id: 'lagoon', n: 9, name: 'Venice Lagoon, Burano', band: 'lagoon', x: 48.9, y: 19.4,
     region: { en: 'Veneto — Venice', it: 'Veneto — Venezia' },
     type: { en: 'Tidal lagoon', it: 'Laguna di marea' },
     species: ['seabass', 'bream'],
@@ -105,7 +106,7 @@ export const WATERS = [
     },
   },
   {
-    id: 'bilancino', n: 10, name: 'Lake Bilancino', band: 'central', x: 40, y: 33,
+    id: 'bilancino', n: 10, name: 'Lake Bilancino', band: 'central', x: 38.5, y: 36.1,
     region: { en: 'Tuscany — Mugello', it: 'Toscana — Mugello' },
     type: { en: 'Open artificial basin', it: 'Bacino artificiale' },
     species: ['bass', 'pike'],
@@ -116,7 +117,7 @@ export const WATERS = [
     },
   },
   {
-    id: 'massaciuccoli', n: 11, name: 'Lake Massaciuccoli', band: 'central', x: 33, y: 35,
+    id: 'massaciuccoli', n: 11, name: 'Lake Massaciuccoli', band: 'central', x: 31, y: 37.7,
     region: { en: 'Tuscany — Versilia', it: 'Toscana — Versilia' },
     type: { en: 'Shallow reed-fringed lake', it: 'Lago basso tra i canneti' },
     species: ['bass', 'pike'],
