@@ -138,6 +138,16 @@ export default function BookingModal({ tourId, waterId, onClose }) {
                   <div className="font-barlow font-medium text-[15px] text-cream/60">{t('bk.perPerson')} · {t(`tour.${tour.id}.duration`)}</div>
                 </div>
                 <div className="h-px" style={{ background: 'rgba(243,234,217,.12)' }} />
+                <div className="eyebrow !text-[11px] !tracking-[0.2em]">{t('bk.includedTitle')}</div>
+                <div className="flex flex-col gap-2 font-barlow text-[14px] leading-[1.4] text-cream/[.82]">
+                  {['licence', 'boat', 'rental'].map((k) => (
+                    <div key={k} className="flex items-baseline gap-2.5">
+                      <span className="text-gold flex-none">✓</span>
+                      <span>{t(`bk.inc.${k}`)}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="h-px" style={{ background: 'rgba(243,234,217,.12)' }} />
                 <div className="eyebrow !text-[11px] !tracking-[0.2em]">{t('bk.payTitle')}</div>
                 <div className="flex flex-col gap-2 font-barlow text-[14px] leading-[1.4] text-cream/[.72]">
                   <div>· {t('bk.pay1')}</div>
