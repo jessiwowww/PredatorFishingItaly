@@ -38,4 +38,9 @@ function patchRes(res) {
 
 export default defineConfig({
   plugins: [react(), localApi()],
+  server: {
+    // Respect the port assigned by the environment (e.g. preview panel);
+    // falls back to Vite's default when PORT is not set.
+    port: Number(process.env.PORT) || undefined,
+  },
 });

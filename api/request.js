@@ -7,7 +7,7 @@ import { googleConfigured, blockDate } from './_google.js';
 // site can be demoed before Resend / Google are set up.
 
 const OWNER_EMAIL = process.env.BOOKING_TO || 'jessicabertoncello@gmail.com';
-const FROM = process.env.BOOKING_FROM || 'Italian Bass Fishing <onboarding@resend.dev>';
+const FROM = process.env.BOOKING_FROM || 'Predator Fishing Italy <onboarding@resend.dev>';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
@@ -28,7 +28,7 @@ export default async function handler(req, res) {
       await blockDate(
         b.date,
         `[RICHIESTA] ${b.tourName} — ${b.name} (${b.party}p)`,
-        `Richiesta dal sito italianbassfishing.it\n\nTour: ${b.tourName}\nAcqua: ${b.waterName}\nData: ${b.date}\nPescatori: ${b.party}\nTotale: ${b.currency}${b.total} (acconto ${b.currency}${b.deposit})\n\nNome: ${b.name}\nEmail: ${b.email}\nNote: ${b.notes || '—'}\n\nSe rifiuti la richiesta, elimina questo evento per liberare la data.`
+        `Richiesta dal sito predatorfishingitaly.com\n\nTour: ${b.tourName}\nAcqua: ${b.waterName}\nData: ${b.date}\nPescatori: ${b.party}\nTotale: ${b.currency}${b.total} (acconto ${b.currency}${b.deposit})\n\nNome: ${b.name}\nEmail: ${b.email}\nNote: ${b.notes || '—'}\n\nSe rifiuti la richiesta, elimina questo evento per liberare la data.`
       );
       result.calendar = true;
     } catch (e) {
@@ -46,7 +46,7 @@ export default async function handler(req, res) {
         from: FROM,
         to: OWNER_EMAIL,
         replyTo: b.email,
-        subject: `🎣 Nuova richiesta: ${summaryLine}`,
+        subject: `🎣 Nuova richiesta Predator Fishing Italy: ${summaryLine}`,
         text:
 `Nuova richiesta di prenotazione dal sito.
 
@@ -88,7 +88,7 @@ Attendi il messaggio diretto di Roberto che conferma la data prima di
 effettuare qualsiasi pagamento — niente è prenotato finché lui non conferma.
 
 A presto in acqua,
-Italian Bass Fishing`
+Predator Fishing Italy`
           : `Hi ${b.name},
 
 we've received your request:
@@ -104,7 +104,7 @@ Please wait for a direct message from Roberto confirming your date before
 making any payment or arrangement — nothing is booked until he confirms.
 
 See you on the water,
-Italian Bass Fishing`,
+Predator Fishing Italy`,
       });
       result.email = true;
     } catch (e) {

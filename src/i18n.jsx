@@ -131,7 +131,8 @@ const STRINGS = {
     'tour.lagoonTour.tagline': 'Sea bass & gilthead bream',
     'tour.lagoonTour.desc': 'A full day threading the channels of the Venice Lagoon toward Burano — sea bass and bream among the birdlife and fishing villages.',
     // footer
-    'footer.copy': '© Italian Bass Fishing — Veneto, Italy',
+    'footer.copy': '© Predator Fishing Italy — Veneto, Italy',
+    'footer.tagline': 'Guided predator fishing across northern & central Italy.',
   },
 
   it: {
@@ -253,7 +254,8 @@ const STRINGS = {
     'tour.lagoonTour.group': '1–3 pescatori',
     'tour.lagoonTour.tagline': 'Spigola e orata',
     'tour.lagoonTour.desc': 'Una giornata intera tra i canali della Laguna di Venezia verso Burano — spigole e orate tra uccelli acquatici e villaggi di pescatori.',
-    'footer.copy': '© Italian Bass Fishing — Veneto, Italia',
+    'footer.copy': '© Predator Fishing Italy — Veneto, Italia',
+    'footer.tagline': 'Pesca guidata ai predatori tra nord e centro Italia.',
   },
 };
 

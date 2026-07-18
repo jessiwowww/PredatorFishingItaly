@@ -1,4 +1,4 @@
-# italianbassfishing.it — setup
+# predatorfishingitaly.com — setup
 
 Sito vetrina + richieste di prenotazione per Roberto Bertoncello, fishing guide.
 Vite + React + Tailwind. Le funzioni in `/api` girano come serverless su Vercel.
@@ -25,9 +25,9 @@ Sendgrid). Piano gratuito: 100 email/giorno, più che sufficiente.
    all'indirizzo con cui ti sei registrata (jessicabertoncello@gmail.com) e il
    mittente è `onboarding@resend.dev`. Va benissimo per la fase regalo: le
    richieste arrivano a te.
-4. Quando il dominio `italianbassfishing.it` è collegato: Dashboard → Domains →
+4. Quando il dominio `predatorfishingitaly.com` è collegato: Dashboard → Domains →
    Add domain → aggiungi i 3 record DNS che ti mostra → poi imposta
-   `BOOKING_FROM="Roberto <booking@italianbassfishing.it>"` e le email di
+   `BOOKING_FROM="Roberto <booking@predatorfishingitaly.com>"` e le email di
    conferma arriveranno anche ai clienti.
 
 ## 2. Google Calendar — disponibilità + blocco automatico (15 minuti)
@@ -57,7 +57,7 @@ Per liberare una data (richiesta rifiutata) basta cancellare l'evento.
 1. Pusha il repo su GitHub, importalo su https://vercel.com → Framework: Vite.
 2. Project → Settings → **Environment Variables** → incolla le variabili di
    `.env.example` con i valori veri.
-3. Quando vuoi: Settings → Domains → aggiungi `italianbassfishing.it`.
+3. Quando vuoi: Settings → Domains → aggiungi `predatorfishingitaly.com`.
 
 ## Dove si cambiano prezzi e testi
 

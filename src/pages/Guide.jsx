@@ -35,7 +35,9 @@ export default function Guide() {
         <div className="eyebrow mb-5">{t('guide.gallery')}</div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[1, 2, 3, 4].map((i) => (
-            <img key={i} src={`/images/gallery-${i}.jpg`} alt="On the water" className="w-full h-[220px] object-cover rounded-[2px]" />
+            <div key={i} className="group overflow-hidden h-[220px] rounded-[2px]">
+              <img src={`/images/gallery-${i}.jpg`} alt="On the water" className="zoom-img" />
+            </div>
           ))}
         </div>
       </section>

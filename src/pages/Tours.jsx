@@ -26,9 +26,11 @@ export default function Tours() {
           const fromBase = Math.min(...tour.bands.map((b) => PRICE_BANDS[b][tour.priceKey]).filter(Boolean));
           const from = perPersonPrice(fromBase, MAX_ANGLERS);
           return (
-            <div key={tour.id} className={`p-9 flex flex-col gap-4 ${i < 2 ? 'md:border-r divider' : ''} ${i > 0 ? 'border-t md:border-t-0 divider' : ''}`}>
-              <img src={tour.img} alt={t(`tour.${tour.id}.name`)} className="w-full h-[180px] object-cover rounded-[2px]" />
-              <div className="font-archivo font-black text-[24px]">{t(`tour.${tour.id}.name`)}</div>
+            <div key={tour.id} className={`group p-9 flex flex-col gap-4 transition-colors hover:bg-white/[0.02] ${i < 2 ? 'md:border-r divider' : ''} ${i > 0 ? 'border-t md:border-t-0 divider' : ''}`}>
+              <div className="overflow-hidden h-[180px] rounded-[2px]">
+                <img src={tour.img} alt={t(`tour.${tour.id}.name`)} className="zoom-img" />
+              </div>
+              <div className="font-archivo font-black text-[24px] group-hover:text-gold transition-colors">{t(`tour.${tour.id}.name`)}</div>
               <p className="font-barlow text-[17px] leading-[1.5] text-cream/70">{t(`tour.${tour.id}.desc`)}</p>
               <div className="flex flex-col gap-1.5 font-barlow font-medium text-[15px] leading-[1.4] text-cream/60 mt-1.5">
                 <div>{t('tours.duration')}: {t(`tour.${tour.id}.duration`)}</div>

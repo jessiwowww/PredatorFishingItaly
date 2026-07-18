@@ -2,27 +2,148 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-pine text-cream font-barlow antialiased;
+  /* faint radial glow top-left for depth */
+  background-image: radial-gradient(120% 80% at 15% -10%, rgba(201, 162, 39, 0.06), transparent 55%);
+  background-repeat: no-repeat;
 }
+
+/* Fine film grain over everything — adds warmth/texture without images. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 11px; }
+::-webkit-scrollbar-track { background: #0f1a14; }
+::-webkit-scrollbar-thumb { background: #2a3d31; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: #c9a227; }
+::selection { background: rgba(201, 162, 39, 0.3); color: #f3ead9; }
 
 @layer components {
   .eyebrow {
     @apply font-barlow font-bold text-[12px] uppercase tracking-[0.25em] text-gold;
   }
   .btn-gold {
-    @apply inline-block bg-gold text-pine font-barlow font-semibold uppercase tracking-[0.05em] rounded-[2px] cursor-pointer text-center transition-opacity hover:opacity-90 disabled:cursor-default;
+    @apply relative inline-flex items-center justify-center gap-2 bg-gold text-pine font-barlow font-semibold uppercase tracking-[0.06em] rounded-[2px] cursor-pointer text-center overflow-hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px -10px rgba(201, 162, 39, 0.7);
+  }
+  .btn-gold:disabled {
+    @apply cursor-default;
+    transform: none;
+    box-shadow: none;
+  }
+  /* sheen sweep on hover */
+  .btn-gold::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+  }
+  .btn-gold:hover::before { left: 130%; }
+
+  .btn-outline {
+    @apply relative inline-flex items-center justify-center gap-2 font-barlow font-semibold uppercase tracking-[0.06em] rounded-[2px] cursor-pointer text-center text-cream border;
+    border-color: rgba(243, 234, 217, 0.35);
+    transition: all 0.25s ease;
+  }
+  .btn-outline:hover {
+    border-color: #c9a227;
+    color: #c9a227;
+  }
+
   .chip {
     @apply font-barlow font-semibold text-sm uppercase tracking-[0.03em] px-[18px] py-[10px] rounded-full text-gold border;
     background: rgba(201, 162, 39, 0.12);
     border-color: rgba(201, 162, 39, 0.4);
+    transition: background 0.2s ease, transform 0.2s ease;
   }
+  .chip:hover {
+    background: rgba(201, 162, 39, 0.2);
+    transform: translateY(-1px);
+  }
+
   .divider {
     border-color: rgba(243, 234, 217, 0.1);
   }
   .input-dark {
-    @apply w-full bg-transparent border rounded-md px-3 py-2.5 text-cream font-barlow text-[15px] outline-none placeholder:text-cream/40 focus:border-gold/60;
+    @apply w-full bg-transparent border rounded-md px-3 py-2.5 text-cream font-barlow text-[15px] outline-none placeholder:text-cream/40;
     border-color: rgba(243, 234, 217, 0.18);
+    transition: border-color 0.2s ease;
   }
+  .input-dark:focus { border-color: rgba(201, 162, 39, 0.6); }
+
+  /* animated gold underline for text links */
+  .link-gold {
+    @apply relative font-barlow font-semibold uppercase tracking-[0.05em] text-gold cursor-pointer;
+  }
+  .link-gold::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .link-gold:hover::after { transform: scaleX(1); }
+
+  /* image tile that zooms on hover of its group */
+  .zoom-img { @apply w-full h-full object-cover; transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .group:hover .zoom-img { transform: scale(1.06); }
+}
+
+/* Reveal-on-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Slow cinematic zoom for hero image */
+@keyframes kenburns {
+  from { transform: scale(1.04); }
+  to { transform: scale(1.16); }
+}
+.kenburns { animation: kenburns 22s ease-out forwards; }
+
+/* Scroll cue bounce */
+@keyframes cue {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(7px); opacity: 1; }
+}
+.scroll-cue { animation: cue 1.8s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .kenburns, .scroll-cue { animation: none; }
+  html { scroll-behavior: auto; }
 }
