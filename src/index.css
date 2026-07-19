@@ -8,23 +8,16 @@ html {
 
 body {
   @apply bg-pine text-cream font-barlow antialiased;
-  /* faint radial glow top-left for depth */
-  background-image: radial-gradient(120% 80% at 15% -10%, rgba(201, 162, 39, 0.06), transparent 55%);
-  background-repeat: no-repeat;
-}
-
-/* Fine film grain — a small pre-baked PNG (cheap static raster, no live SVG
-   filters). A fixed overlay just composites the cached image; unlike the old
-   feTurbulence version it never re-runs a filter, so it can't stall paint. */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  pointer-events: none;
-  opacity: 0.06;
-  background-image: url('/images/grain.png');
-  background-repeat: repeat;
+  /* Two background layers on the body itself, so page content ALWAYS paints
+     on top and the texture can never "cover" anything:
+       1) a faint radial gold glow for depth
+       2) a whisper-subtle pre-baked grain tile (static PNG, no live SVG
+          filters — the old feTurbulence version stalled paint). */
+  background-color: #13221b;
+  background-image:
+    radial-gradient(120% 80% at 15% -10%, rgba(201, 162, 39, 0.06), transparent 55%),
+    url('/images/grain.png');
+  background-repeat: no-repeat, repeat;
 }
 
 /* Custom scrollbar */
