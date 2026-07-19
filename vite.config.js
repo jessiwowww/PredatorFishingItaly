@@ -36,7 +36,7 @@ function patchRes(res) {
   return res;
 }
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode, command }) => {
   // Load .env into process.env so the local /api handlers (Resend, Google
   // Calendar) can read their keys during `npm run dev`, just like on Vercel.
   const env = loadEnv(mode, process.cwd(), '');
@@ -48,6 +48,10 @@ export default defineConfig(({ mode }) => {
   }
 
   return {
+    // Relative asset paths in the production build, so the built site works
+    // even opened directly (double-click) or served from a sub-path. Dev keeps
+    // absolute '/' to avoid HMR quirks.
+    base: command === 'build' ? './' : '/',
     plugins: [react(), localApi()],
     server: {
       // Respect the port assigned by the environment (e.g. preview panel);
