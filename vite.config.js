@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // In production (Vercel) the /api folder is deployed as serverless functions.
@@ -36,11 +36,23 @@ function patchRes(res) {
   return res;
 }
 
-export default defineConfig({
-  plugins: [react(), localApi()],
-  server: {
-    // Respect the port assigned by the environment (e.g. preview panel);
-    // falls back to Vite's default when PORT is not set.
-    port: Number(process.env.PORT) || undefined,
-  },
+export default defineConfig(({ mode }) => {
+  // Load .env into process.env so the local /api handlers (Resend, Google
+  // Calendar) can read their keys during `npm run dev`, just like on Vercel.
+  const env = loadEnv(mode, process.cwd(), '');
+  for (const k of [
+    'RESEND_API_KEY', 'BOOKING_TO', 'BOOKING_FROM',
+    'GOOGLE_SERVICE_ACCOUNT_EMAIL', 'GOOGLE_PRIVATE_KEY', 'GOOGLE_CALENDAR_ID',
+  ]) {
+    if (env[k] && !process.env[k]) process.env[k] = env[k];
+  }
+
+  return {
+    plugins: [react(), localApi()],
+    server: {
+      // Respect the port assigned by the environment (e.g. preview panel);
+      // falls back to Vite's default when PORT is not set.
+      port: Number(process.env.PORT) || undefined,
+    },
+  };
 });
