@@ -34,18 +34,30 @@ export default function ItalyMap({ selectedId, onSelect }) {
         {[MAINLAND, SICILY, SARDINIA].map((d, i) => (
           <path key={i} d={d} fill="#22322a" stroke="#c9a227" strokeWidth="0.4" strokeOpacity="0.5" strokeLinejoin="round" />
         ))}
-        {WATERS.map((w) => {
+        {/* Render non-selected first, selected last so it sits on top. */}
+        {[...WATERS].sort((a, b) => (a.id === selectedId ? 1 : 0) - (b.id === selectedId ? 1 : 0)).map((w) => {
           const sel = w.id === selectedId;
           return (
             <g key={w.id} onClick={() => onSelect(w.id)} className="cursor-pointer">
-              {/* generous invisible hit area */}
-              <circle cx={w.x} cy={w.y} r="4" fill="transparent" />
-              <circle cx={w.x} cy={w.y} r={sel ? 2.6 : 1.8} fill="#c9a227" opacity={sel ? 1 : 0.85} />
+              {/* generous invisible hit area (easier to tap on mobile) */}
+              <circle cx={w.x} cy={w.y} r="5" fill="transparent" />
+              {sel && (
+                <>
+                  {/* soft pulsing halo */}
+                  <circle cx={w.x} cy={w.y} r="5.4" fill="#c9a227" opacity="0.18">
+                    <animate attributeName="r" values="4.2;6;4.2" dur="2.2s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0.28;0.08;0.28" dur="2.2s" repeatCount="indefinite" />
+                  </circle>
+                  {/* cream outer ring for contrast against the map */}
+                  <circle cx={w.x} cy={w.y} r="3.6" fill="none" stroke="#f3ead9" strokeWidth="0.7" />
+                </>
+              )}
+              <circle cx={w.x} cy={w.y} r={sel ? 3 : 1.7} fill="#c9a227" opacity={sel ? 1 : 0.8} />
               <text
                 x={w.x}
                 y={w.y}
                 fill="#13221b"
-                fontSize={sel ? 3 : 2.2}
+                fontSize={sel ? 3.2 : 2.1}
                 fontFamily="Barlow Condensed, sans-serif"
                 fontWeight="700"
                 textAnchor="middle"
