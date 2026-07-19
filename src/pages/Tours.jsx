@@ -121,6 +121,12 @@ export default function Tours() {
                   </div>
                 </div>
 
+                {selected.minAnglers > 1 && (
+                  <div className="mt-4 inline-flex items-center gap-2 font-barlow font-semibold text-[13px] uppercase tracking-[0.08em] text-gold self-start px-3.5 py-2 rounded-full" style={{ background: 'rgba(201,162,39,.12)', border: '1px solid rgba(201,162,39,.4)' }}>
+                    {t('tours.spot.min', selected.minAnglers)}
+                  </div>
+                )}
+
                 <button
                   onClick={() => openBooking(tourForWater(selected).id, selected.id)}
                   className="btn-gold w-full mt-6 px-6 py-[14px] text-[15px]"

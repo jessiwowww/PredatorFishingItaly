@@ -36,6 +36,11 @@ export const DEPOSIT_RETAINED_DAYS = 3;
 
 export const INSTAGRAM = 'https://www.instagram.com/robertobertoncello_';
 
+// Minimum party size for a given water (far central lakes require 2+).
+export function minAnglersFor(water) {
+  return water?.minAnglers || 1;
+}
+
 export function perPersonPrice(base, party) {
   const f = GROUP_FACTORS[Math.min(party, GROUP_FACTORS.length) - 1];
   return Math.round(base * f);

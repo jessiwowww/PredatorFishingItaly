@@ -3,7 +3,7 @@ import { useLang } from '../i18n';
 import { TOURS, WATERS, watersForTour } from '../data';
 import {
   CURRENCY, PRICE_BANDS, MAX_ANGLERS, DEPOSIT_PERCENT,
-  FULL_REFUND_DAYS, DEPOSIT_RETAINED_DAYS, perPersonPrice,
+  FULL_REFUND_DAYS, DEPOSIT_RETAINED_DAYS, perPersonPrice, minAnglersFor,
 } from '../config';
 
 const iso = (y, m, d) => `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
@@ -44,6 +44,13 @@ export default function BookingModal({ tourId, waterId, onClose }) {
       .catch(() => setBusy((b) => ({ ...b, [monthKey]: [] })));
   }, [monthKey, busy]);
   const busyDays = busy[monthKey] || [];
+
+  // Far central lakes require a minimum party (2). Keep party at/above it,
+  // bumping up automatically when the visitor picks such a water.
+  const minParty = minAnglersFor(water);
+  useEffect(() => {
+    if (party < minParty) setParty(minParty);
+  }, [minParty, party]);
 
   const base = PRICE_BANDS[water.band][tour.priceKey];
   const perPerson = perPersonPrice(base, party);
@@ -223,12 +230,14 @@ export default function BookingModal({ tourId, waterId, onClose }) {
               <div className="flex items-center justify-between">
                 <div className="font-barlow font-medium text-[15px] text-cream/75">{t('bk.anglers')}</div>
                 <div className="flex items-center gap-3">
-                  <button onClick={() => setParty(Math.max(1, party - 1))} className="w-[30px] h-[30px] rounded-md border divider text-cream text-[18px]">–</button>
+                  <button onClick={() => setParty(Math.max(minParty, party - 1))} disabled={party <= minParty} className="w-[30px] h-[30px] rounded-md border divider text-cream text-[18px] disabled:opacity-30 disabled:cursor-default">–</button>
                   <div className="font-barlow font-semibold text-[17px] min-w-[20px] text-center">{party}</div>
-                  <button onClick={() => setParty(Math.min(MAX_ANGLERS, party + 1))} className="w-[30px] h-[30px] rounded-md border divider text-cream text-[18px]">+</button>
+                  <button onClick={() => setParty(Math.min(MAX_ANGLERS, party + 1))} disabled={party >= MAX_ANGLERS} className="w-[30px] h-[30px] rounded-md border divider text-cream text-[18px] disabled:opacity-30 disabled:cursor-default">+</button>
                 </div>
               </div>
-              <div className="font-barlow text-[13px] leading-[1.4] -mt-2" style={{ color: 'rgba(201,162,39,.9)' }}>{t('bk.groupHint')}</div>
+              <div className="font-barlow text-[13px] leading-[1.4] -mt-2" style={{ color: 'rgba(201,162,39,.9)' }}>
+                {minParty > 1 ? t('bk.minPartyHint', minParty) : t('bk.groupHint')}
+              </div>
 
               {/* contact */}
               <div className="grid grid-cols-2 gap-2.5">

@@ -51,7 +51,7 @@ export const WATERS = [
     },
   },
   {
-    id: 'bolsena', n: 5, name: 'Lake Bolsena', band: 'central', x: 44, y: 51.5,
+    id: 'bolsena', n: 5, name: 'Lake Bolsena', band: 'central', minAnglers: 2, x: 44, y: 51.5,
     region: { en: 'Lazio — central Italy', it: 'Lazio — Italia centrale' },
     type: { en: 'Volcanic crater lake', it: 'Lago vulcanico' },
     species: ['bass', 'pike', 'perch'],
@@ -106,7 +106,7 @@ export const WATERS = [
     },
   },
   {
-    id: 'bilancino', n: 10, name: 'Lake Bilancino', band: 'central', x: 38.5, y: 36.1,
+    id: 'bilancino', n: 10, name: 'Lake Bilancino', band: 'central', minAnglers: 2, x: 38.5, y: 36.1,
     region: { en: 'Tuscany — Mugello', it: 'Toscana — Mugello' },
     type: { en: 'Open artificial basin', it: 'Bacino artificiale' },
     species: ['bass', 'pike'],
@@ -117,7 +117,7 @@ export const WATERS = [
     },
   },
   {
-    id: 'massaciuccoli', n: 11, name: 'Lake Massaciuccoli', band: 'central', x: 31, y: 37.7,
+    id: 'massaciuccoli', n: 11, name: 'Lake Massaciuccoli', band: 'central', minAnglers: 2, x: 31, y: 37.7,
     region: { en: 'Tuscany — Versilia', it: 'Toscana — Versilia' },
     type: { en: 'Shallow reed-fringed lake', it: 'Lago basso tra i canneti' },
     species: ['bass', 'pike'],
