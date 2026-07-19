@@ -53,6 +53,11 @@ export default defineConfig(({ mode, command }) => {
     // absolute '/' to avoid HMR quirks.
     base: command === 'build' ? './' : '/',
     plugins: [react(), localApi()],
+    // Pre-bundle deps at server start so the FIRST dev page load is already
+    // warm — avoids Vite's "blank on first load, fine after a refresh" quirk.
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'react-router-dom'],
+    },
     server: {
       // Respect the port assigned by the environment (e.g. preview panel);
       // falls back to Vite's default when PORT is not set.
