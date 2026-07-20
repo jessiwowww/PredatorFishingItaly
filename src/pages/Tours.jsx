@@ -20,8 +20,8 @@ export default function Tours() {
         <p className="font-barlow text-[20px] leading-[1.5] text-cream/75 max-w-[620px] mt-5">{t('tours.sub')}</p>
       </section>
 
-      {/* TOUR CARDS */}
-      <section className="mx-6 md:mx-16 grid md:grid-cols-3 border divider border-b-0">
+      {/* TOUR CARDS — internal dividers only, no outer frame */}
+      <section className="mx-6 md:mx-16 grid md:grid-cols-3">
         {TOURS.map((tour, i) => {
           const fromBase = Math.min(...tour.bands.map((b) => PRICE_BANDS[b][tour.priceKey]).filter(Boolean));
           const from = perPersonPrice(fromBase, MAX_ANGLERS);
@@ -49,7 +49,7 @@ export default function Tours() {
       </section>
 
       {/* HOW BOOKING WORKS */}
-      <section className="mx-6 md:mx-16 border divider border-t-0 px-6 md:px-0 pt-11 pb-[60px]">
+      <section className="mx-6 md:mx-16 border-t divider px-6 md:px-0 pt-11 pb-[60px]">
         <div className="eyebrow mb-10 md:pl-16">{t('tours.how')}</div>
         <div className="relative grid md:grid-cols-3 gap-10 md:gap-0">
           <div className="absolute top-[23px] left-[16.666%] right-[16.666%] h-0.5 hidden md:block" style={{ background: 'rgba(243,234,217,.22)' }} />
