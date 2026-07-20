@@ -48,6 +48,12 @@ export default defineConfig(({ mode, command }) => {
   }
 
   return {
+    // Give each dev server its own optimized-deps cache, keyed by port. If two
+    // servers run at once (e.g. your `npm run dev` on 5173 and a preview on
+    // 5174) they no longer share node_modules/.vite — which previously could
+    // corrupt the cache and throw "destroy is not a function" on load.
+    cacheDir: process.env.PORT ? `node_modules/.vite-${process.env.PORT}` : 'node_modules/.vite',
+
     // Relative asset paths in the production build, so the built site works
     // even opened directly (double-click) or served from a sub-path. Dev keeps
     // absolute '/' to avoid HMR quirks.
