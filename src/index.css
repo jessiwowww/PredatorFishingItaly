@@ -112,14 +112,15 @@ body {
   .group:hover .zoom-img { transform: scale(1.06); }
 }
 
-/* Reveal-on-scroll */
-.reveal {
+/* Reveal-on-scroll. Only hides content when JS is confirmed running (html.js),
+   so a script failure can never leave the page blank. */
+.js .reveal {
   opacity: 0;
   transform: translateY(26px);
   transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
   will-change: opacity, transform;
 }
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: none;
 }
