@@ -108,6 +108,27 @@ Due componenti quasi sempre:
 6. ⬜ **Per ogni acqua di partenza (le prime che userà davvero)**: licenza regionale + permesso del concessionario + eventuali vincoli parco/laguna. Procurare/registrare i permessi **per gli ospiti** (li includiamo nel prezzo).
 7. ⬜ **Laguna**: contrassegno LV + bollino sulla barca se motore > 10 HP.
 
+## Aggiornamenti dalla verifica (punti prima aperti)
+
+- **Laghi = sì, stesso quadro, ma autorità diversa.** Il D.Lgs 171/2005 (Codice
+  nautica) disciplina locazione/noleggio **sia in acque marittime sia interne**.
+  Quindi il noleggio (occasionale o con annotazione) **vale anche sui laghi**, ma
+  ci si registra presso l'**autorità della navigazione interna / autorità di
+  bacino** (non la Capitaneria), e **ogni bacino può avere una propria ordinanza**.
+  Confermato che servono comunque **patente** e **certificato di idoneità al
+  noleggio**, max **12 persone** a bordo.
+- **Laguna di Venezia = regime più pesante.** Le unità per **trasporto di persone
+  in servizio pubblico non di linea** (taxi/noleggio con conducente, fino a 20
+  persone) devono essere **iscritte nei registri delle navi minori** e avere
+  **licenza/autorizzazione del Comune di Venezia**; stazza ≤ 5 t. La navigazione
+  nei canali interni è molto limitata. → per la laguna serve un passaggio dedicato
+  col **Comune di Venezia (Ufficio Mobilità)**.
+- **Massaciuccoli = molto vincolato.** Dentro l'**Oasi LIPU** la pesca **non è
+  consentita**; nel resto del lago la gestione pesca è **FIPSAS Lucca** (tessera
+  federale) e la navigazione è ammessa solo a **piccole barche** (remi/vela/motore)
+  secondo il regolamento del **Parco Migliarino-San Rossore-Massaciuccoli**. Da
+  valutare se tenerlo tra gli spot "attivi" o solo vetrina.
+
 ## Fonti
 - Guardia Costiera — [annotazione uso commerciale](https://www.guardiacostiera.gov.it/portale/annotazione-di-uso-commerciale-di-unita-da-diporto) · [noleggio occasionale](https://www.guardiacostiera.gov.it/portale/noleggio-occasionale-di-unita-da-diporto) · [rinnovo idoneità](https://www.guardiacostiera.gov.it/portale/rinnovo-del-certificato-di-sicurezza-o-idoneita-al-noleggio-per-le-unita-da-diporto)
 - RINA — [certificato sicurezza/idoneità](https://www.rina.org/it/yacht-safety-certificate)
