@@ -15,7 +15,14 @@ export default function App() {
   const [booking, setBooking] = useState(null);
   const { pathname } = useLocation();
 
-  useEffect(() => window.scrollTo(0, 0), [pathname]);
+  // Braces matter: an arrow with an implicit return would hand React whatever
+  // window.scrollTo() returns as the effect's cleanup. Normally that's
+  // undefined, but a browser extension that overrides scrollTo can make it
+  // return a non-function — and React then throws "destroy is not a function"
+  // on the next navigation. The block body returns nothing, so it's safe.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   const openBooking = (tourId, waterId) => setBooking({ tourId, waterId });
   const closeBooking = () => setBooking(null);

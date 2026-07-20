@@ -49,7 +49,7 @@ export default function Tours() {
       </section>
 
       {/* HOW BOOKING WORKS */}
-      <section className="mx-6 md:mx-16 border-t divider px-6 md:px-0 pt-11 pb-[60px]">
+      <section className="mx-6 md:mx-16 px-6 md:px-0 pt-11 pb-[60px]">
         <div className="eyebrow mb-10 md:pl-16">{t('tours.how')}</div>
         <div className="relative grid md:grid-cols-3 gap-10 md:gap-0">
           <div className="absolute top-[23px] left-[16.666%] right-[16.666%] h-0.5 hidden md:block" style={{ background: 'rgba(243,234,217,.22)' }} />
