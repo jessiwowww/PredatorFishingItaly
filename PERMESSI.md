@@ -24,6 +24,40 @@ Stato: **Partita IVA già fatta ✅**. Restano da sistemare/verificare:
 | **RC commerciale (assicurazione)** | **Broker/compagnia** specializzata in nautica | Polizza con **trasporto persone paganti**. Indicativo ~€400–700/anno per natante; fino a €1.500–3.000 con trasporto passeggeri. | ⬜ da fare |
 | **Patente adeguata** | **Motorizzazione Civile** (esame); preparazione in **scuola nautica** | Verificare se la patente attuale copre il **trasporto di persone a pagamento** o serve abilitazione in più. | ⬜ da verificare |
 
+### La tua attività = "noleggio CON CONDUCENTE" (non affitti la barca vuota)
+
+Roberto non affitta la barca al cliente: la porta lui. In termini di legge questo
+è **noleggio con conducente** — il cliente paga **barca + skipper** per la
+giornata, e a bordo comandi **tu** (basta la **patente nautica**). Quindi
+"noleggiare la propria barca" ha senso: non la consegni, ci sali tu. Due regimi:
+
+**1) Noleggio occasionale — per PARTIRE / primi ospiti (leggero)**
+- Il proprietario (persona fisica o società non-noleggio) può noleggiare in forma
+  occasionale, **max 42 giorni/anno** complessivi.
+- **Puoi condurre tu** la barca (o un tuo dipendente con patente).
+- Tassazione: **imposta sostitutiva 20%** sui proventi (forfait: non deduci i costi).
+- **Comunicazione all'Agenzia delle Entrate prima di OGNI uscita** (via PEC/email).
+- **Non** richiede annotazione uso commerciale né iscrizione registro imprese per
+  questa attività occasionale.
+- 👉 È la via più semplice per portare i **primi ospiti** in regola.
+
+**2) Annotazione di uso commerciale — quando diventa CONTINUATIVO (>42 gg/anno)**
+- Attività ammesse (art. 2 Codice Nautica): **locazione e noleggio**, insegnamento
+  navigazione, appoggio diving. Il tuo caso rientra nel **noleggio (con conducente)**.
+- Serve:
+  - **iscrizione al Registro Imprese** (Camera di Commercio) — impresa/società;
+  - **attestazione di idoneità RINA** → certificato di idoneità al noleggio (3 anni);
+  - per il **noleggio con conducente**, **autorizzazione della Provincia/Città
+    Metropolitana** competente **oppure SCIA**;
+  - annotazione riportata sui registri e sulla licenza di navigazione.
+- **Nessun limite di 42 giorni**; puoi dedurre i costi (regime d'impresa ordinario).
+
+**In pratica:** si **parte** con il **noleggio occasionale** (≤42 gg, 20%,
+comunicazione all'AdE) e si passa all'**annotazione** quando l'attività supera i
+42 giorni/anno o vuoi dedurre i costi. ⚠️ Questo schema è del **Codice nautica
+(mare/laguna)**: per un **natante sui laghi** conferma alla **Motorizzazione
+Civile** quale regime si applica davvero.
+
 **Attenzione acque diverse = autorità diverse:**
 - **Mare / Laguna di Venezia** → Codice nautica, RINA, annotazione uso commerciale; in laguna anche **contrassegno "LV" + bollino** per motori > 10 HP.
 - **Laghi e fiumi (acque interne)** → **Motorizzazione Civile** (uffici di Milano, Venezia, Mantova, Roma) + regole **regionali**. Il trasporto persone a pagamento è trattato come navigazione locale.
