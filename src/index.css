@@ -8,16 +8,11 @@ html {
 
 body {
   @apply bg-pine text-cream font-barlow antialiased;
-  /* Two background layers on the body itself, so page content ALWAYS paints
-     on top and the texture can never "cover" anything:
-       1) a faint radial gold glow for depth
-       2) a whisper-subtle pre-baked grain tile (static PNG, no live SVG
-          filters — the old feTurbulence version stalled paint). */
+  /* Just a faint radial gold glow for depth. (No grain texture — the tiled
+     PNG showed a visible repeating pattern.) */
   background-color: #13221b;
-  background-image:
-    radial-gradient(120% 80% at 15% -10%, rgba(201, 162, 39, 0.06), transparent 55%),
-    url('/images/grain.png');
-  background-repeat: no-repeat, repeat;
+  background-image: radial-gradient(120% 80% at 15% -10%, rgba(201, 162, 39, 0.06), transparent 55%);
+  background-repeat: no-repeat;
 }
 
 /* Custom scrollbar */
